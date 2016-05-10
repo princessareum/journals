@@ -2,8 +2,13 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
-var expressSession = require('express-session');
+var session = require('express-session');
 var passport = require('passport');
+var port = 3000;
+var app = express();
+
+//keys
+var sessionKeys = require('./sessionKeys.js');
 
 //Back-end Controllers
 var serverController = require('./backControllers/serverController.js');
@@ -12,20 +17,36 @@ var userCtrl = require('./backControllers/userController.js');
 var journalCtrl = require('./backControllers/journalController.js');
 var groupCtrl = require('./backControllers/groupController.js');
 
-var port = 3000;
-var app = express();
+
+require('./config/passport.js')(passport);
 
 
+app.use(session({
+  secret: sessionKeys.secret,
+  resave: true,
+  saveUninitialized: true
+}));
 
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(__dirname+'/public'));
 
+//auth
+app.post('/auth', passport.authenticate('local-signup'), function(req, res){
+  res.send();
+})
+
+
+
 //User
 app.post('/api/user', userCtrl.CreateUser);
-app.get('/api/user/', userCtrl.GetUser);
+app.get('/api/user', userCtrl.GetUser);
 // app.get('/api/user/:id', userCtrl.GetUserById);
 app.put('/api/user/:id', userCtrl.UpdateUser);
 app.delete('/api/user/:id', userCtrl.DeleteUser);
+app.post('/api/user/login', userCtrl.Login);
 
 
 //Journal
@@ -52,20 +73,6 @@ app.post('/api/album', albumCtrl.CreateAlbum);
 app.get('/api/album', albumCtrl.GetAlbum);
 app.put('/api/album/:id', albumCtrl.UpdateAlbum);
 app.delete('/api/album/:id', albumCtrl.DeleteAlbum);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -12,7 +12,7 @@ angular.module('app')
           var tempArray = elem[0].value.split('\\');
           var fileName = tempArray[tempArray.length - 1];
 
-          mainService.storeImage(fileread, fileName)
+          mainService.storeImage(fileread, fileName, scope.user)
           .then(function (result) {
             console.log(result);
             scope.images.unshift(result);

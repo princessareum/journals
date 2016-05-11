@@ -11,29 +11,34 @@ angular.module('app').controller('groupController', function($scope, user, mainS
   $scope.getGroup = function(){
     console.log($scope.user, user);
     mainService.getGroup($scope.user._id).then(function(response){
-      $scope.group = response;
+      $scope.groups = response;
     })
   };
+
+$scope.getGroup();
 
   $scope.getUserByEmail = function(emails){
     var newEmails = emails.split(', ');
     console.log(newEmails);
     mainService.getUserByEmail(newEmails).then(function(response){
-      $scope.group.users = response;
+      $scope.groups.users = response;
       console.log(response);
       $scope.createGroup();
     })
   }
 
   $scope.createGroup = function(){
-    $scope.group.admin = $scope.user._id;
-    mainService.createGroup($scope.group).then(function(response){
+    $scope.groups.admin = $scope.user._id;
+    mainService.createGroup($scope.groups).then(function(response){
       $scope.newGroup = response;
       console.log($scope.newGroup);
       $scope.getGroup();
     })
   };
 
-
+  $scope.selectGroup = function(group){
+    $scope.selectedGroup = group;
+    console.log($scope.selectedGroup);
+  }
 
 })

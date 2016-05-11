@@ -40,6 +40,19 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
+  this.getUserByEmail = function(emails){
+    return $http({
+      method: 'POST',
+      url: '/api/user/email',
+      data: {
+        emails: emails
+      }
+    }).then(function(response){
+      return response.data;
+    })
+  };
+
+
 // Journal
   this.postJournal = function(journal){
     return $http({
@@ -77,6 +90,7 @@ angular.module('app').service('mainService', function($http){
       })
   };
 
+
 // Group
   this.createGroup = function(group){
     return $http({
@@ -97,6 +111,15 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
+  this.getGroupById = function(groupId){
+    return $http({
+      method: 'GET',
+      url: '/api/group?_id='+groupId
+    }).then(function(response){
+      return response.data;
+    })
+  }
+
 
   // this.deleteGroup = function(groupId){
   //   return $http({
@@ -104,6 +127,7 @@ angular.module('app').service('mainService', function($http){
   //     url: '/api/group/'+groupId
   //   })
   // }
+
 
 // Album
   this.createAlbum = function(album){
@@ -116,7 +140,6 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
-
   this.getAlbum = function(groupId){
     return $http({
       method: 'GET',
@@ -126,17 +149,6 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
-  this.getUserByEmail = function(emails){
-    return $http({
-      method: 'POST',
-      url: '/api/user/email',
-      data: {
-        emails: emails
-      }
-    }).then(function(response){
-      return response.data;
-    })
-  };
 
 
 

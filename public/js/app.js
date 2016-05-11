@@ -45,6 +45,25 @@ angular.module('app', ['ui.router'])
           }
       })
 
+      .state('album', {
+        url: '/albums/:id',
+        templateUrl: './routes/album.html',
+        controller: 'albumController',
+        resolve: {
+          user: function(mainService){
+                  return mainService.currentUser().then(function(response){
+                    return response;
+                  }).catch(function(err){
+                    $state.go('login');
+                  })
+                }
+          // },
+          // group: function(mainService, $stateParams){
+          //         // return mainService.getGroupById($stateParams.id);
+          //         return $stateParams.id;
+          }
+      })
+
 
 
   })

@@ -1,3 +1,9 @@
 
 <a class="click" ng-click="toggleModal()">Click</a>
 <group-directive show='modalShown'></group-directive>
+
+<br>
+<br>
+<div ng-repeat="group in groups" ng-click="selectGroup(group)">
+  <div ui-sref="album({id: group._id})">{{group.name}}</div>
+</div>

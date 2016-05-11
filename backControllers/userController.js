@@ -64,6 +64,27 @@ module.exports = {
         }
       }
     })
+  },
+
+  CurrentUser: function(req, res, next){
+    res.send(req.user);
+  },
+
+  GetUserByEmail: function(req, res, next){
+    console.log(req.body);
+    User.find({
+      userEmail: {
+        $in: req.body.emails
+      }
+    }).select('_id').exec(function(err, response){
+      console.log(response)
+      if(err){
+        res.status(500).json(err);
+      } else {
+        res.status(200).json(response);
+      }
+    })
+
   }
 
 

@@ -11,7 +11,7 @@ angular.module('app')
           var fileread = loadEvent.target.result;
           var tempArray = elem[0].value.split('\\');
           var fileName = tempArray[tempArray.length - 1];
-
+          console.log(scope);
           mainService.storeImage(fileread, fileName, scope.user)
           .then(function (result) {
             console.log(result);

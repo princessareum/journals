@@ -34,8 +34,11 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname+'/public'));
 
 //auth
-app.post('/auth', passport.authenticate('local-signup'), function(req, res){
-  res.send();
+app.post('/auth', function(req, res, next){
+  console.log(req.body);
+  next();
+}, passport.authenticate('local-signup'), function(req, res){
+  res.send({login: true, user: req.user});
 })
 
 
@@ -45,8 +48,13 @@ app.post('/api/user', userCtrl.CreateUser);
 app.get('/api/user', userCtrl.GetUser);
 // app.get('/api/user/:id', userCtrl.GetUserById);
 app.put('/api/user/:id', userCtrl.UpdateUser);
-app.delete('/api/user/:id', userCtrl.DeleteUser);
+app.delete('/api/user/delete/:id', userCtrl.DeleteUser);
 app.post('/api/user/login', userCtrl.Login);
+app.get('/api/user/current', userCtrl.CurrentUser);
+app.post('/api/user/email',userCtrl.GetUserByEmail);
+
+//Upload photo
+app.post('/api/newimage', serverController.SaveImage);
 
 
 //Journal
@@ -57,8 +65,11 @@ app.put('/api/journal/:id', journalCtrl.UpdateJournal);
 app.delete('/api/journal/:id', journalCtrl.DeleteJournal);
 
 
-//Upload photo
-app.post('/api/newimage', serverController.SaveImage);
+//Album
+app.post('/api/album', albumCtrl.CreateAlbum);
+app.get('/api/album', albumCtrl.GetAlbum);
+app.put('/api/album/:id', albumCtrl.UpdateAlbum);
+app.delete('/api/album/:id', albumCtrl.DeleteAlbum);
 
 
 //Group
@@ -68,11 +79,6 @@ app.put('/api/group/:id', groupCtrl.UpdateGroup);
 app.delete('/api/group/:id', groupCtrl.DeleteGroup);
 
 
-//Album
-app.post('/api/album', albumCtrl.CreateAlbum);
-app.get('/api/album', albumCtrl.GetAlbum);
-app.put('/api/album/:id', albumCtrl.UpdateAlbum);
-app.delete('/api/album/:id', albumCtrl.DeleteAlbum);
 
 
 

@@ -1,14 +1,23 @@
 {
   "name": "journals",
+  "description": "journals",
   "version": "1.0.0",
-  "description": "",
+  "author": "A-Reum Jung",
+  "license": "ISC",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "gulp css ; gulp js",
+    "prestart": "npm run build",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "homepage": "https://github.com/princessareum/journals",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/princessareum/journals.git"
+  },
+  "bugs": "https://github.com/princessareum/journals/issues",
+  "keywords": [],
   "dependencies": {
     "aws-sdk": "^2.3.8",
     "bcrypt-nodejs": "0.0.3",
@@ -19,5 +28,12 @@
     "mongoose": "^4.4.14",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-uglifycss": "^1.0.6"
   }
 }

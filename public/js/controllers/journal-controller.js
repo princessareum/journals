@@ -1,7 +1,9 @@
-angular.module('app').controller('journalController', function($scope, mainService, $state, user){
+angular.module('app').controller('journalController', function($scope, mainService, $state, user, $stateParams){
 
   $scope.images = [];
   $scope.user = user;
+  $scope.albumId = $stateParams.id;
+
 
   // $scope.currentUser = function(){
   //   mainService.currentUser().then(function(response){
@@ -18,21 +20,19 @@ angular.module('app').controller('journalController', function($scope, mainServi
     console.log($scope.images)
     journal.photo = $scope.images[0].Location;
     journal.author = $scope.user._id;
-    console.log(journal.author)
-    mainService.postJournal(journal).then(function(response){
-      $scope.newJournal = response;
-      $scope.getJournal();
-    })
+    journal.relationship = $scope.user.relationToBaby;
+    journal.album = $stateParams.id;
+    mainService.postJournal(journal);
   }
 
-  $scope.getJournal = function(){
-    mainService.getJournal($scope.user._id).then(function(response){
-      $scope.journals = response;
-      console.log(response);
-    })
-  }
-
-
+  // $scope.getJournal = function(){
+  //   mainService.getJournal($scope.user._id).then(function(response){
+  //     $scope.journals = response;
+  //     console.log(response);
+  //   })
+  // }
+  //
+  //
 
 
 

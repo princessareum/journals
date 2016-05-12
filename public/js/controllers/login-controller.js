@@ -11,7 +11,7 @@ angular.module('app').controller('loginController', function($scope, mainService
     mainService.login(user).then(function(response){
       if(response.login){ mainService.getUser(response.user._id).then(function(response){
         $scope.user = response;
-        $state.go('journalentry');
+        $state.go('group');
         })
       }
     })

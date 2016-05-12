@@ -34,4 +34,9 @@ angular.module('app').controller('albumController', function($scope, mainService
 
   $scope.getJournal();
 
+  $scope.selectAlbum = function(album){
+    $scope.selectedAlbum = album;
+    console.log($scope.selectedAlbum);
+  }
+
 });

@@ -1,9 +1,9 @@
 <a class="click" ng-click="toggleModal()">Click</a>
 <album-directive show='modalShown'></album-directive>
 
-<div ng-repeat="album in albums">
-  <h1>{{album.title}}</h1>
-  <img src="{{album.albumCover}}">
-
-
+<div ng-repeat="album in albums" ng-click="selectAlbum(album)">
+  <div ui-sref="journal({id: album._id})">
+    <img src="{{album.albumCover}}">
+    <h1>{{album.title}}</h1>
+  </div>
 </div>

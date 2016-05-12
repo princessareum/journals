@@ -21,7 +21,7 @@ $scope.getGroup();
     var newEmails = emails.split(', ');
     console.log(newEmails);
     mainService.getUserByEmail(newEmails).then(function(response){
-      $scope.groups.users = response;
+      $scope.group.users = response;
       console.log(response);
       $scope.createGroup();
     })
@@ -29,7 +29,7 @@ $scope.getGroup();
 
   $scope.createGroup = function(){
     $scope.groups.admin = $scope.user._id;
-    mainService.createGroup($scope.groups).then(function(response){
+    mainService.createGroup($scope.group).then(function(response){
       $scope.newGroup = response;
       console.log($scope.newGroup);
       $scope.getGroup();

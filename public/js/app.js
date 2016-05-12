@@ -16,7 +16,7 @@ angular.module('app', ['ui.router'])
       })
 
       .state('journalentry', {
-        url: '/journalentry',
+        url: '/journalentry/:id',
         templateUrl: './routes/journal-entry.html',
         controller: 'journalController',
         resolve: {
@@ -62,6 +62,21 @@ angular.module('app', ['ui.router'])
           //         // return mainService.getGroupById($stateParams.id);
           //         return $stateParams.id;
           }
+      })
+
+      .state('journal', {
+        url: '/journals/:id',
+        templateUrl: './routes/journal-list.html',
+        controller: 'journalListController',
+        resolve: {
+          user: function(mainService){
+                  return mainService.currentUser().then(function(response){
+                    return response;
+                  }).catch(function(err){
+                    $state.go('login');
+                  })
+                }
+              }
       })
 
 

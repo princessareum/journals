@@ -1,0 +1,11 @@
+
+<div class="">
+  <button type="button"><a ui-sref="journalentry({id: albumId})">New Journal</a></button>
+</div>
+<div ng-repeat="journal in journals">
+<img src="{{journal.photo}}"><br>
+{{journal.date}}<br>
+{{journal.title}}<br>
+{{journal.relationship}}<br>
+{{journal.contents}}<br>
+</div>

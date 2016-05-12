@@ -73,6 +73,16 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
+  this.getJournalByAlbum = function(albumId){
+    return $http({
+      method: 'GET',
+      url: '/api/journal?album='+albumId
+    }).then(function(response){
+      return response.data;
+    })
+  };
+
+
   this.storeImage = function (imageData, fileName, user) {
       var imageExtension = imageData.split(';')[0].split('/');
       imageExtension = imageExtension[imageExtension.length - 1];
@@ -111,14 +121,14 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
-  this.getGroupById = function(groupId){
-    return $http({
-      method: 'GET',
-      url: '/api/group?_id='+groupId
-    }).then(function(response){
-      return response.data;
-    })
-  }
+  // this.getGroupById = function(groupId){
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/api/group?_id='+groupId
+  //   }).then(function(response){
+  //     return response.data;
+  //   })
+  // }
 
 
   // this.deleteGroup = function(groupId){

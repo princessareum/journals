@@ -1,3 +1,11 @@
-node_modules
+*.lock
+*.log
+*.min.*
+*.o
+*.out
+*.pid
+*~
 keys.js
+node_modules
 sessionKeys.js
+

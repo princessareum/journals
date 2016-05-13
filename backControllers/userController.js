@@ -85,6 +85,11 @@ module.exports = {
       }
     })
 
+  },
+
+  Logout: function(req, res, next){
+    req.logout();
+    return res.status(200).send('logged out');
   }
 
 

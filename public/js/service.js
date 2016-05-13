@@ -52,6 +52,14 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
+  this.logout = function(){
+    return $http({
+      method: 'GET',
+      url: '/api/user/logout'
+    }).then(function(response){
+      return response.data;
+    })
+  }
 
 // Journal
   this.postJournal = function(journal){
@@ -159,6 +167,15 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
+  this.updateAlbum = function(albumId, journalId){
+    return $http({
+      method: 'PUT',
+      url: '/api/album/'+albumId,
+      data: {
+          content: journalId
+      }
+    })
+  }
 
 
 

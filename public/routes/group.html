@@ -1,9 +1,20 @@
-
-<a class="click" ng-click="toggleModal()">Click</a>
+<nav-directive></nav-directive>
+<div class="create-group">
+    <i class="fa fa-plus-square-o fa-2x" aria-hidden="true" ng-click="toggleModal()"></i>
+    <h1>My Groups</h1>
+</div>
+<br>
+<img class="family-photo" src="./img/family.jpg" alt="" />
 <group-directive show='modalShown'></group-directive>
 
 <br>
 <br>
-<div ng-repeat="group in groups" ng-click="selectGroup(group)">
-  <div ui-sref="album({id: group._id})">{{group.name}}</div>
+<div class="group-list">
+  <div class="groups" ng-repeat="group in groups" ng-click="selectGroup(group)">
+    <div class="group-name" ui-sref="album({id: group._id})">
+      <ul>
+        <li>{{group.name}}</li>
+      </ul>
+    </div>
+  </div>
 </div>

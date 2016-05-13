@@ -1,7 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Monofett|Quicksand:400,300);
+@import url(https://fonts.googleapis.com/css?family=Sniglet:400);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li, input, button, p{
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+  font-family: 'Monofett', cursive;
+}
+
+
+
+
+/*navbar, home*/
+
+.navbar {
+  background: #F5E48E;
+  height: 50px;
+  position: relative;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+
+.nav li{
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 12.5px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.home-baby-photo {
+  width: 100%;
+}
+
+
+/*signup*/
+
+.signup {
+  text-align: center;
+  margin: 10%;
+  padding-bottom: 10%;
+  border: ridge 5px #F2A0CA;
+  background: #edbdd5;
+}
+
+.signup h1 {
+  margin-top: 30px;
+  font-size: 50px;
+}
+
+.signup input {
+  margin-bottom: 10px;
+  width: 150px;
+  height: 20px;
+}
+
+.signup button {
+  width: 80px;
+  height: 30px;
+  background: #BBD994;
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
 /*modal*/
 
-.click {
-  cursor: pointer;
+.modalContent img {
+  position: relative;
+  width: 30px;
+}
+
+.loginModal {
+  text-align: center;
+}
+
+.loginModal button {
+  width: 80px;
+  height: 30px;
+  background: #8DAAD9;
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.loginModal input {
+  margin-bottom: 10px;
+  width: 150px;
+  height: 20px;
+}
+
+.loginModal h1{
+  margin-top: 30px;
+  font-size: 50px;
+}
+
+.login-dialog {
+  position: fixed;
+  width: 250px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: #fff;
+  background: #A2DFE0;
+  border: ridge 5px #69e0e0;;
+  /*border: 2px solid #00a7c9;*/
 }
 
 .overlay {
@@ -16,12 +131,12 @@
 
 .dialog {
   position: fixed;
-  width: 300px;
-  height: 500px;
+  width: 70vw;
+  height: 65vh;
   top: 50%;
   left: 50%;
+  background: white;
   transform: translateY(-50%) translateX(-50%);
-  background-color: #fff;
 }
 
 .modalContent {
@@ -30,14 +145,217 @@
 
 }
 
+.group-dialog {
+  position: fixed;
+  width: 250px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: #fff;
+  background: #8DAAD9;
+  border: 2px solid #749de0;
+}
+
 .groupModal {
   text-align: center;
   padding: 0 20px;
   font-size: 12px;
 }
 
-.groupModal h2 {
-  font-size: 35px;
-  /*color: #FF83BD;
-  text-shadow: 3px 3px #000;*/
+.groupModal h1 {
+  margin-top: 10px;
+  font-size: 50px;
+}
+
+.groupModal button {
+  width: 150px;
+  height: 30px;
+  background: #F2A0CA;
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.groupModal input {
+  margin-bottom: 10px;
+  width: 150px;
+  height: 20px;
+}
+
+.groupModal textarea {
+  width: 200px;
+}
+
+
+
+/*create album modal*/
+
+.albumModal {
+  text-align: center;
+  padding: 0 20px;
+  font-size: 12px;
+}
+
+.album-dialog {
+  position: fixed;
+  width: 250px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: #fff;
+  background: #BBD994;
+  border: 2px solid #95d83c;
+}
+
+.albumModal h1 {
+  margin-top: 10px;
+  font-size: 50px;
+}
+
+.albumModal button {
+  width: 150px;
+  height: 30px;
+  background: #A2DFE0;
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.albumModal input {
+  margin-bottom: 10px;
+  width: 150px;
+  height: 20px;
+}
+
+
+
+/*group*/
+
+.create-group {
+  display: inline-block;
+  position: relative;
+}
+
+.family-photo {
+  width: 100%;
+}
+
+.create-group h1 {
+  text-align: center;
+  display: inline-block;
+}
+
+.group-list {
+  text-align: center;
+  background: #BBD994;
+  margin: 0 10%;
+}
+
+.group-name li{
+  list-style: none;
+  font-size: 20px;
+  border: 1px solid lightgray;
+}
+
+
+
+/*album*/
+
+.create-album {
+  display: inline-block;
+  position: relative;
+}
+
+.create-album h1 {
+  text-align: center;
+  display: inline-block;
+}
+
+.album-list {
+  text-align: center;
+  margin: 0 10%;
+}
+
+.album-cover {
+  width: 250px;
+  height: 250px;
+}
+
+/*create journals*/
+
+.create-journal {
+  display: inline-block;
+}
+
+.create-journal h1 {
+  text-align: center;
+  display: inline-block;
+}
+
+.journal-list {
+  text-align: center;
+  border: 10px double #A2DFE0;
+  margin: 30px 25px;
+}
+
+.journal-list img{
+  width: 250px;
+  height: 250px;
+}
+
+.journal {
+  margin: 10px 10px;
+}
+
+.journal-title {
+  font-weight: bold;
+}
+
+.journal-relationship {
+  font-weight: bold;
+}
+
+.journal-entry {
+  background: #F2A0CA;
+  border: 5px solid #8DAAD9;
+  text-align: center;
+  padding: 20px 0;
+  margin: 30px 20px;
+}
+
+.journal-entry input {
+  width: 160px;
+  height: 22px;
+  background: white;
+}
+
+.journal-entry button {
+  width: 80px;
+  height: 30px;
+  background: #8DAAD9;
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+
+/*footer*/
+footer {
+  background: black;
+  height: 80px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.location, .hours, .sns {
+  margin-top: 30px;
+  flex: 1;
+  text-align: center;
+  font-size: 15px;
 }

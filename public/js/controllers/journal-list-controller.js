@@ -13,7 +13,8 @@ angular.module('app').controller('journalListController', function($scope, mainS
   $scope.getJournalByAlbum = function(){
     mainService.getJournalByAlbum($scope.albumId).then(function(response){
       $scope.journals = response;
-      console.log($scope.journals)
+      $scope.journals.reverse();
+      // console.log($scope.journals)
     })
   }();
 

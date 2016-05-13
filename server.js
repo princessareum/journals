@@ -52,6 +52,7 @@ app.delete('/api/user/delete/:id', userCtrl.DeleteUser);
 app.post('/api/user/login', userCtrl.Login);
 app.get('/api/user/current', userCtrl.CurrentUser);
 app.post('/api/user/email',userCtrl.GetUserByEmail);
+app.get('/api/user/logout', userCtrl.Logout);
 
 //Upload photo
 app.post('/api/newimage', serverController.SaveImage);

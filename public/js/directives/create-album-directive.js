@@ -1,5 +1,5 @@
 angular.module('app').directive('albumDirective', function(){
-  console.log("Album directive javascript loaded")
+
   return {
     restrict: 'E',
     replace: true,

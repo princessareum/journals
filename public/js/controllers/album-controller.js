@@ -10,17 +10,19 @@ angular.module('app').controller('albumController', function($scope, mainService
 
   $scope.createAlbum = function(album){
     album.group = $stateParams.id;
-    console.log(album);
+
     mainService.createAlbum(album).then(function(response){
       $scope.newAlbum = response;
-      console.log($scope.newAlbum);
+
       $scope.getAlbum($stateParams.id);
-  });
-}
+    });
+  }
 
   $scope.getAlbum = function(groupId){
     mainService.getAlbum(groupId).then(function(response){
       $scope.albums = response;
+      // console.log($scope.albums);
+      // console.log($scope.albums[0].content[0].photo)
     })
   };
   $scope.getAlbum($stateParams.id);
@@ -28,15 +30,15 @@ angular.module('app').controller('albumController', function($scope, mainService
   $scope.getJournal = function(){
     mainService.getJournal($scope.user._id).then(function(response){
       $scope.journals = response;
-      console.log(response);
+
     })
-  }
+  };
 
   $scope.getJournal();
 
   $scope.selectAlbum = function(album){
     $scope.selectedAlbum = album;
-    console.log($scope.selectedAlbum);
-  }
+
+  };
 
 });

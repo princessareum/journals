@@ -1,8 +1,8 @@
 <h1>Journal Entry</h1>
-<div>
+<div class="journal-entry">
   <input type="date" placeholder="Date" ng-model="journal.date"><br><br>
   <input type="text" placeholder="Title" ng-model="journal.title"><br><br>
-  <input type="file" fileread accept="image/*" ng-model='journal.photo'><br><br>
+  <input type="file" fileread accept="image/*" ng-model='journal.photo' id="journal-entry-file"><br><br>
   <textarea rows="8" cols="40" placeholder="Journal Entry" ng-model=journal.contents></textarea><br><br>
-  <button type="button" ng-click="postJournal(journal)"><a ui-sref="journal({id: albumId})">Submit</a></button>
+  <button type="button" ng-click="postJournal(journal)"><ui-sref="journal({id: albumId})">Submit</ui-sref></button>
 </div>

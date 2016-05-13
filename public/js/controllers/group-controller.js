@@ -9,7 +9,7 @@ angular.module('app').controller('groupController', function($scope, user, mainS
   $scope.user = user;
 
   $scope.getGroup = function(){
-    console.log($scope.user, user);
+    // console.log($scope.user, user);
     mainService.getGroup($scope.user._id).then(function(response){
       $scope.groups = response;
     })

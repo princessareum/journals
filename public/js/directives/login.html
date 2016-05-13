@@ -1,0 +1,15 @@
+
+
+<div class="modal" ng-show='modalShown'>
+  <div class="overlay"></div>
+  <div class="login-dialog">
+    <div class="modalContent"><img src="./img/x.png" ng-click='toggleModal()'></div>
+        <div class='loginModal'>
+          <h1>Login</h1>
+          <br>
+          <input type="text" placeholder="Email Address" ng-model="info.userEmail">
+          <input type="password" placeholder="Password" ng-model="info.password"><br>
+          <button type="button" ng-click="login(info)">Login</button>
+        </div>
+  </div>
+</div>

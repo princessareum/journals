@@ -22,7 +22,11 @@ angular.module('app').controller('journalController', function($scope, mainServi
     journal.author = $scope.user._id;
     journal.relationship = $scope.user.relationToBaby;
     journal.album = $stateParams.id;
-    mainService.postJournal(journal);
+    mainService.postJournal(journal).then(function(response){
+      console.log(response._id);
+      mainService.updateAlbum(journal.album, response._id)
+    })
+    // mainService.updateAlbum(journal.album, jou)
   }
 
   // $scope.getJournal = function(){

@@ -12,8 +12,31 @@ module.exports = {
     })
   },
 
+  // GetAlbum: function(req, res, next){
+  //   Album.find(req.query, function(err, response){
+  //     if(err){
+  //       res.status(500).json(err);
+  //     } else {
+  //       res.status(200).json(response);
+  //     }
+  //   })
+  // },
+  //
+  // GetAlbum: function(req, res, next){
+  //   Album.find(req.query)
+  //   .populate({path: 'content.photo'})
+  //   .exec(function(err, response){
+  //     if(err){
+  //       res.status(500).json(err);
+  //     } else {
+  //       res.status(200).json(response);
+  //     }
+  //   })
+  // },
   GetAlbum: function(req, res, next){
-    Album.find(req.query, function(err, response){
+    Album.find(req.query)
+    .populate('content', 'photo')
+    .exec(function(err, response){
       if(err){
         res.status(500).json(err);
       } else {
@@ -21,6 +44,7 @@ module.exports = {
       }
     })
   },
+
 
   UpdateAlbum: function(req, res, next){
     Album.findByIdAndUpdate(req.params.id, req.body, function(err, response){

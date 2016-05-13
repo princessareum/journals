@@ -1,9 +1,16 @@
-<a class="click" ng-click="toggleModal()">Click</a>
+<nav-directive></nav-directive>
+<div class="create-album">
+  <i class="fa fa-plus-square-o fa-2x" aria-hidden="true" ng-click="toggleModal()"></i>
+  <h1>My Albums</h1>
+  <i class="fa fa-arrow-left fa-2x" aria-hidden="true" ui-sref="group"></i>
+</div>
 <album-directive show='modalShown'></album-directive>
 
-<div ng-repeat="album in albums" ng-click="selectAlbum(album)">
-  <div ui-sref="journal({id: album._id})">
-    <img src="{{album.albumCover}}">
-    <h1>{{album.title}}</h1>
+<div class="album-list">
+  <div class="albums" ng-repeat="album in albums" ng-click="selectAlbum(album)">
+    <div ui-sref="journal({id: album._id})">
+      <img class="album-cover" src="{{album.content[0].photo}}">
+      <div class="album-name">{{album.title}}</div>
+    </div>
   </div>
 </div>

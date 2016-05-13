@@ -1,11 +1,15 @@
-
-<div class="">
-  <button type="button"><a ui-sref="journalentry({id: albumId})">New Journal</a></button>
+<nav-directive></nav-directive>
+<div class="create-journal">
+  <i class="fa fa-plus-square-o fa-2x" aria-hidden="true" ui-sref="journalentry({id: albumId})"></i>
+  <h1>New Journal</h1>
+  <i class="fa fa-arrow-left fa-2x" aria-hidden="true" ui-sref="album"></i>
 </div>
-<div ng-repeat="journal in journals">
-<img src="{{journal.photo}}"><br>
-{{journal.date}}<br>
-{{journal.title}}<br>
-{{journal.relationship}}<br>
-{{journal.contents}}<br>
+<div ng-repeat="journal in journals" class="journal-list">
+  <img src="{{journal.photo}}"><br>
+  <div class="journal">
+    <div class="journal-date">{{journal.date}}</div><br>
+    <div class="journal-title">{{journal.title}}</div><br>
+    <div class="journal-relationship">{{journal.relationship}}</div><br>
+    <div class="journal-contents">{{journal.contents}}</div><br>
+  <div>
 </div>

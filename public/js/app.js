@@ -1,13 +1,18 @@
 angular.module('app', ['ui.router'])
   .config(function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
-      .state('login', {
-        url: '/login',
-        templateUrl: './routes/login.html',
-        controller: 'loginController'
+      .state('home', {
+        url: '/home',
+        templateUrl: './routes/home.html'
       })
+      //
+      // .state('login', {
+      //   url: '/login',
+      //   templateUrl: './routes/login.html',
+      //   controller: 'loginController'
+      // })
 
       .state('signup', {
         url: '/signup',
@@ -24,7 +29,7 @@ angular.module('app', ['ui.router'])
                   return mainService.currentUser().then(function(response){
                     return response;
                   }).catch(function(err){
-                    $state.go('login');
+                    $state.go('home');
                   })
                 }
           }
@@ -37,9 +42,10 @@ angular.module('app', ['ui.router'])
         resolve: {
           user: function(mainService){
                   return mainService.currentUser().then(function(response){
+                    console.log(response);
                     return response;
                   }).catch(function(err){
-                    $state.go('login');
+                    $state.go('home');
                   })
                 }
           }
@@ -54,7 +60,7 @@ angular.module('app', ['ui.router'])
                   return mainService.currentUser().then(function(response){
                     return response;
                   }).catch(function(err){
-                    $state.go('login');
+                    $state.go('home');
                   })
                 }
           // },
@@ -73,7 +79,7 @@ angular.module('app', ['ui.router'])
                   return mainService.currentUser().then(function(response){
                     return response;
                   }).catch(function(err){
-                    $state.go('login');
+                    $state.go('home');
                   })
                 }
               }

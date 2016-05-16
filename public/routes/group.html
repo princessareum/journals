@@ -10,11 +10,16 @@
 <br>
 <br>
 <div class="group-list">
-  <div class="groups" ng-repeat="group in groups" ng-click="selectGroup(group)">
-    <div class="group-name" ui-sref="album({id: group._id})">
+  <div class="groups" ng-repeat="group in groups track by $index" ng-click="selectGroup(group)">
+    <div class="group-name" ui-sref="album({groupId: group._id})">
       <ul>
         <li>{{group.name}}</li>
       </ul>
+    </div>
+    <div ng-if="user._id === group.admin">
+      <button type="button" ng-click="toggleEditModal()">Edit</button>
+      <edit-group show="modalShown"></edit-group>
+      <button type="button" ng-click="deleteGroup(group._id)">Delete</button>
     </div>
   </div>
 </div>

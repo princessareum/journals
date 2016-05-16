@@ -21,12 +21,15 @@ angular.module('app', ['ui.router'])
       })
 
       .state('journalentry', {
-        url: '/journalentry/:id',
+        url: '/journalentry/:groupId/:albumId',
         templateUrl: './routes/journal-entry.html',
         controller: 'journalController',
         resolve: {
           user: function(mainService, $state){
                   return mainService.currentUser().then(function(response){
+                    if(!response){
+                      $state.go('home');
+                    }
                     return response;
                   }).catch(function(err){
                     $state.go('home');
@@ -40,9 +43,11 @@ angular.module('app', ['ui.router'])
         templateUrl: './routes/group.html',
         controller: 'groupController',
         resolve: {
-          user: function(mainService){
+          user: function(mainService, $state){
                   return mainService.currentUser().then(function(response){
-                    console.log(response);
+                    if(!response){
+                      $state.go('home');
+                    }
                     return response;
                   }).catch(function(err){
                     $state.go('home');
@@ -52,37 +57,39 @@ angular.module('app', ['ui.router'])
       })
 
       .state('album', {
-        url: '/albums/:id',
+        url: '/albums/:groupId',
         templateUrl: './routes/album.html',
         controller: 'albumController',
         resolve: {
-          user: function(mainService){
+          user: function(mainService, $state){
                   return mainService.currentUser().then(function(response){
+                    if(!response){
+                      $state.go('home');
+                    }
                     return response;
                   }).catch(function(err){
                     $state.go('home');
                   })
                 }
-          // },
-          // group: function(mainService, $stateParams){
-          //         // return mainService.getGroupById($stateParams.id);
-          //         return $stateParams.id;
           }
       })
 
       .state('journal', {
-        url: '/journals/:id',
+        url: '/journals/:groupId/:albumId',
         templateUrl: './routes/journal-list.html',
         controller: 'journalListController',
         resolve: {
-          user: function(mainService){
+          user: function(mainService, $state){
                   return mainService.currentUser().then(function(response){
+                    if(!response){
+                      $state.go('home');
+                    }
                     return response;
                   }).catch(function(err){
                     $state.go('home');
                   })
                 }
-              }
+          }
       })
 
 

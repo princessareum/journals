@@ -1,0 +1,21 @@
+<div class="modal" ng-show='journalModalShown'>
+  <div class="overlay" ng-click='toggleJournalModal()'></div>
+  <div class="journal-dialog">
+    <div class="modalContent"></div>
+        <div class='journalModal'>
+          <div class="edit-journal">
+            <h1>Edit Journal</h1>
+            <input type="date" placeholder="Date" ng-modal="selectedJournal.date"><br><br>
+            <input type="text" placeholder="Title" ng-model="selectedJournal.title"><br><br>
+            <input type="file" fileread accept="image/*" ng-model='selectedJournal.photo' id="journal-entry-file"><br><br>
+            <textarea rows="8" cols="40" placeholder="Journal Entry" ng-model=selectedJournal.contents></textarea><br><br>
+
+            <button type="button" ng-click="updateJournal(journal)">
+              <ui-sref="journal({groupId: groupId, albumId: albumId})">Edit</ui-sref>
+            </button>
+
+            <button type="button"><ui-sref="journal({groupId: groupId, albumId: albumId})">Cancel</ui-sref></button>
+          </div>
+        </div>
+      </div>
+</div>

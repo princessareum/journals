@@ -2,15 +2,20 @@
 <div class="create-album">
   <i class="fa fa-plus-square-o fa-2x" aria-hidden="true" ng-click="toggleModal()"></i>
   <h1>My Albums</h1>
-  <i class="fa fa-arrow-left fa-2x" aria-hidden="true" ui-sref="group"></i>
+  <i class="fa fa-arrow-left fa-2x" aria-hidden="true" ui-sref="group({id: user.id})"></i>
 </div>
 <album-directive show='modalShown'></album-directive>
 
 <div class="album-list">
-  <div class="albums" ng-repeat="album in albums" ng-click="selectAlbum(album)">
-    <div ui-sref="journal({id: album._id})">
+  <div class="albums" ng-repeat="album in albums track by $index" ng-click="selectAlbum(album)">
+    <div ui-sref="journal({groupId: groupId, albumId: album._id})">
       <img class="album-cover" src="{{album.content[0].photo}}">
       <div class="album-name">{{album.title}}</div>
+    </div>
+    <div ng-if="user._id === album.group.admin">
+      <button type="button" ng-click="toggleModal()">Edit</button>
+      <edit-album show="modalShown"></edit-album>
+      <button type="button">Delete</button>
     </div>
   </div>
 </div>

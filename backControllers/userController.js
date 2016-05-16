@@ -88,7 +88,9 @@ module.exports = {
   },
 
   Logout: function(req, res, next){
+    console.log("logout", req.logout);
     req.logout();
+    console.log("hit", req.user)
     return res.status(200).send('logged out');
   }
 

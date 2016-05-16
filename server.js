@@ -33,6 +33,13 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(__dirname+'/public'));
 
+// app.use(bodyParser.json({limit: "50mb"}));
+// app.use(bodyParser.urlencoded({limit: "50mb", extended: true}));
+
+
+
+
+
 //auth
 app.post('/auth', function(req, res, next){
   console.log(req.body);
@@ -59,7 +66,7 @@ app.post('/api/newimage', serverController.SaveImage);
 
 
 //Journal
-app.post('/api/journal', journalCtrl.CreateJournal);
+app.post('/api/journal',journalCtrl.CreateJournal);
 app.get('/api/journal', journalCtrl.GetJournal);
 // app.get('/api/journal/:id', journalCtrl.GetJournalById);
 app.put('/api/journal/:id', journalCtrl.UpdateJournal);

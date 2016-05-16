@@ -1,6 +1,5 @@
 angular.module('app').service('mainService', function($http){
 
-
 // User
   this.createUser = function(user){
     return $http({
@@ -61,6 +60,23 @@ angular.module('app').service('mainService', function($http){
     })
   }
 
+// Store photos to S3
+  this.storeImage = function (imageData, fileName, user) {
+      var imageExtension = imageData.split(';')[0].split('/');
+      imageExtension = imageExtension[imageExtension.length - 1];
+      console.log(user);
+      var newImage = {
+        imageName: fileName,
+        imageBody: imageData,
+        imageExtension: imageExtension,
+        userEmail: user.userEmail
+      }
+      return $http.post('/api/newimage', newImage).then(function(response){
+        console.log(response)
+        return response.data;
+      })
+  };
+
 // Journal
   this.postJournal = function(journal){
     return $http({
@@ -90,24 +106,24 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
-
-  this.storeImage = function (imageData, fileName, user) {
-      var imageExtension = imageData.split(';')[0].split('/');
-      imageExtension = imageExtension[imageExtension.length - 1];
-      console.log(user);
-      var newImage = {
-        imageName: fileName,
-        imageBody: imageData,
-        imageExtension: imageExtension,
-        userEmail: user.userEmail
-      }
-
-      return $http.post('/api/newimage', newImage).then(function(response){
-        console.log(response)
-        return response.data;
-      })
+  this.updateJournal = function(journalId, journal){
+    return $http({
+      method: 'PUT',
+      url: '/api/journal/'+journalId,
+      data: journal
+    }).then(function(response){
+      return response.data;
+    })
   };
 
+  this.deleteJournal = function(journalId){
+    return $http({
+      method: 'DELETE',
+      url: '/api/journal/'+journalId
+    }).then(function(response){
+      return response.data;
+    })
+  };
 
 // Group
   this.createGroup = function(group){
@@ -138,14 +154,24 @@ angular.module('app').service('mainService', function($http){
   //   })
   // }
 
+  this.updateGroup = function(groupId, group){
+    return $http({
+      method: 'PUT',
+      url: '/api/group/'+groupId,
+      data: group
+    }).then(function(response){
+      return response.data;
+    })
+  };
 
-  // this.deleteGroup = function(groupId){
-  //   return $http({
-  //     method: 'DELETE',
-  //     url: '/api/group/'+groupId
-  //   })
-  // }
-
+  this.deleteGroup = function(groupId){
+    return $http({
+      method: 'DELETE',
+      url: '/api/group/'+groupId
+    }).then(function(response){
+      return response.data;
+    })
+  }
 
 // Album
   this.createAlbum = function(album){
@@ -167,16 +193,23 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
-  this.updateAlbum = function(albumId, journalId){
+  this.updateAlbum = function(albumId, album){
     return $http({
       method: 'PUT',
       url: '/api/album/'+albumId,
-      data: {
-          content: journalId
-      }
+      data: album
+    }).then(function(response){
+      return response.data;
+    })
+  };
+
+  this.deleteAlbum = function(albumId){
+    return $http({
+      method: 'DELETE',
+      url: '/api/album/'+albumId
+    }).then(function(response){
+      return response.data;
     })
   }
 
-
-
-})// end of angular.module
+});// end of angular.module

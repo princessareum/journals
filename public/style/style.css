@@ -290,6 +290,9 @@ body {
   height: 20px;
 }
 
+.albumModal select {
+  background: #fff;
+}
 
 
 /*group*/

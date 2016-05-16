@@ -1,5 +1,7 @@
 angular.module('app').controller('journalController', function($scope, mainService, $state, user, $stateParams){
 
+  $scope.groupId = $stateParams.groupId;
+  $scope.albumId = $stateParams.albumId;
   $scope.images = [];
   $scope.user = user;
 

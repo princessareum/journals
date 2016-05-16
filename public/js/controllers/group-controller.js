@@ -20,18 +20,29 @@ angular.module('app').controller('groupController', function($scope, user, mainS
       $scope.groups = response;
     })
   };
+  $scope.getGroup();
 
-$scope.getGroup();
 
-  $scope.getUserByEmail = function(emails){
+  $scope.getUserByEmail = function(emails, type){
     var newEmails = emails.split(', ');
-    // console.log(newEmails);
+    console.log(newEmails);
     mainService.getUserByEmail(newEmails).then(function(response){
-      $scope.group.users = response;
+      var ids = [];
+
+      for (var i = 0; i < response.length; i++) {
+        ids.push(response[i]._id);
+      }
       // console.log(response);
-      $scope.createGroup();
+        if(type === 'create'){
+          $scope.group.users = ids;
+          $scope.createGroup();
+        } else {
+          $scope.updateGroup($scope.selectedGroup);
+            $scope.selectedGroup.users = ids;
+        }
     })
-  }
+  };
+
 
   $scope.createGroup = function(){
     $scope.group.admin = $scope.user._id;
@@ -44,8 +55,20 @@ $scope.getGroup();
     })
   };
 
-  $scope.selectGroup = function(group){
-    $scope.selectedGroup = group;
+
+  $scope.selectGroup = function(groupId){
+    mainService.getAndPopulateGroup(groupId).then(function(response){
+      console.log(response);
+      var emails = '';
+      for (var i = 0; i < response.users.length; i++) {
+        emails = emails + response.users[i].userEmail;
+        if(i+1 !== response.users.length){
+          emails += ', ';
+        }
+      }
+      response.users = emails;
+      $scope.selectedGroup = response;
+    })
     // console.log($scope.selectedGroup);
   };
 
@@ -54,9 +77,10 @@ $scope.getGroup();
       mainService.updateGroup(group._id, group).then(function(response){
         $scope.updatedGroup = response;
         $scope.getGroup();
-        $scope.toggleModal();
+        $scope.toggleEditModal();
       })
   };
+
 
   $scope.deleteGroup = function(groupId){
       mainService.deleteGroup(groupId).then(function(response){
@@ -66,4 +90,4 @@ $scope.getGroup();
   };
 
 
-})
+})// end of module

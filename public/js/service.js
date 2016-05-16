@@ -145,6 +145,15 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
+  this.getAndPopulateGroup = function(groupId){
+    return $http({
+      method: 'GET',
+      url: '/api/group/populate?_id='+groupId
+    }).then(function(response){
+      return response.data;
+    })
+  };
+
   // this.getGroupById = function(groupId){
   //   return $http({
   //     method: 'GET',
@@ -193,10 +202,10 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
-  this.updateAlbum = function(albumId, album){
+  this.updateAlbum = function(album){
     return $http({
       method: 'PUT',
-      url: '/api/album/'+albumId,
+      url: '/api/album/'+album._id,
       data: album
     }).then(function(response){
       return response.data;

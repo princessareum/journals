@@ -85,7 +85,7 @@ app.post('/api/group', groupCtrl.CreateGroup);
 app.get('/api/group', groupCtrl.GetGroup);
 app.put('/api/group/:id', groupCtrl.UpdateGroup);
 app.delete('/api/group/:id', groupCtrl.DeleteGroup);
-
+app.get('/api/group/populate', groupCtrl.GetAndPopulateGroup);
 
 
 

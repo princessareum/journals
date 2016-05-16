@@ -1,5 +1,5 @@
-<div class="modal" ng-show='modalShown'>
-  <div class="overlay" ng-click='toggleModal()'></div>
+<div class="modal" ng-show='editModalShown'>
+  <div class="overlay" ng-click='editToggleModal()'></div>
   <div class="album-dialog">
     <div class="modalContent"></div>
         <div class='albumModal'>
@@ -9,9 +9,9 @@
           <br>
           <input type="text" placeholder="Album Title" ng-model="album.title">
           <br>
-          <!-- <select ng-options="journal.photo as journal.title for journal in journals" ng-model="album.albumCover"></select> -->
+          <select ng-options="journal.photo as journal.title for journal in journals" ng-model="album.albumCover"></select>
           <br>
-          <button type="button" ng-click="createAlbum(album)">Create Album</button>
+          <button type="button" ng-click="updateAlbum(album)">Edit Album</button>
         </div>
   </div>
 </div>

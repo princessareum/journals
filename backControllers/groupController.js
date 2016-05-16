@@ -22,6 +22,19 @@ module.exports = {
     })
   },
 
+  GetAndPopulateGroup: function(req, res, next){
+    Group.findOne(req.query).populate('users').exec(function(err, response){
+      if(err){
+        res.status(500).json(err);
+      } else {
+        res.status(200).json(response);
+      }
+    })
+  },
+
+
+
+
   UpdateGroup: function(req, res, next){
     Group.findByIdAndUpdate(req.params.id, req.body, function(err, response){
       if(err){

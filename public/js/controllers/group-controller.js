@@ -3,7 +3,10 @@ angular.module('app').controller('groupController', function($scope, user, mainS
   $scope.modalShown = false;
   $scope.toggleModal = function(){
     $scope.modalShown = !$scope.modalShown;
+    console.log("hit");
   };
+
+console.log("start");
 
   $scope.editModalShown = false;
   $scope.toggleEditModal = function(){
@@ -15,7 +18,7 @@ angular.module('app').controller('groupController', function($scope, user, mainS
 
 
   $scope.getGroup = function(){
-    // console.log($scope.user, user);
+    //
     mainService.getGroup($scope.user._id).then(function(response){
       $scope.groups = response;
     })
@@ -25,14 +28,14 @@ angular.module('app').controller('groupController', function($scope, user, mainS
 
   $scope.getUserByEmail = function(emails, type){
     var newEmails = emails.split(', ');
-    console.log(newEmails);
+
     mainService.getUserByEmail(newEmails).then(function(response){
       var ids = [];
 
       for (var i = 0; i < response.length; i++) {
         ids.push(response[i]._id);
       }
-      // console.log(response);
+      //
         if(type === 'create'){
           $scope.group.users = ids;
           $scope.createGroup();
@@ -49,7 +52,7 @@ angular.module('app').controller('groupController', function($scope, user, mainS
     $scope.group.users.push($scope.user._id);
     mainService.createGroup($scope.group).then(function(response){
       $scope.newGroup = response;
-      // console.log($scope.newGroup);
+      //
       $scope.getGroup();
       $scope.toggleModal();
     })
@@ -58,7 +61,7 @@ angular.module('app').controller('groupController', function($scope, user, mainS
 
   $scope.selectGroup = function(groupId){
     mainService.getAndPopulateGroup(groupId).then(function(response){
-      console.log(response);
+
       var emails = '';
       for (var i = 0; i < response.users.length; i++) {
         emails = emails + response.users[i].userEmail;
@@ -69,7 +72,7 @@ angular.module('app').controller('groupController', function($scope, user, mainS
       response.users = emails;
       $scope.selectedGroup = response;
     })
-    // console.log($scope.selectedGroup);
+    //
   };
 
 

@@ -1,15 +1,14 @@
 <div class="modal" ng-show='modalShown'>
-  <div class="overlay" ng-click='toggleModal()'></div>
+  <div class="group-overlay" ng-click='toggleModal()'></div>
   <div class="group-dialog">
-    <div class="modalContent"></div>
+    <!-- <div class="modalContent"></div> -->
         <div class='groupModal'>
           <br>
           <h1>Create Group</h1>
           <br>
+          <input type="text" placeholder=" Group Name" ng-model="group.name">
           <br>
-          <input type="text" placeholder="Group Name" ng-model="group.name">
-          <br>
-          <textarea rows="8" cols="40" placeholder="Members email addresses" ng-model="group.users"></textarea>
+          <textarea rows="8" cols="40" placeholder=" Members email addresses" ng-model="group.users"></textarea>
           <br>
           <button type="button" ng-click="getUserByEmail(group.users, 'create')">Create Group</button>
         </div>

@@ -12,6 +12,7 @@ module.exports = {
     })
   },
 
+
   GetGroup: function(req, res, next){
     Group.find(req.query, function(err, response){
       if(err){
@@ -21,6 +22,7 @@ module.exports = {
       }
     })
   },
+
 
   GetAndPopulateGroup: function(req, res, next){
     Group.findOne(req.query).populate('users').exec(function(err, response){
@@ -33,8 +35,6 @@ module.exports = {
   },
 
 
-
-
   UpdateGroup: function(req, res, next){
     Group.findByIdAndUpdate(req.params.id, req.body, function(err, response){
       if(err){
@@ -44,6 +44,7 @@ module.exports = {
         }
     })
   },
+
 
   DeleteGroup: function(req, res, next){
     Group.findByIdAndRemove(req.params.id, function(err, response){

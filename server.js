@@ -30,11 +30,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors());
-app.use(bodyParser.json());
 app.use(express.static(__dirname+'/public'));
 
-// app.use(bodyParser.json({limit: "50mb"}));
-// app.use(bodyParser.urlencoded({limit: "50mb", extended: true}));
+app.use(bodyParser.json({limit: "50mb"}));
+app.use(bodyParser.urlencoded({limit: "50mb", extended: true}));
 
 
 
@@ -42,7 +41,7 @@ app.use(express.static(__dirname+'/public'));
 
 //auth
 app.post('/auth', function(req, res, next){
-  console.log(req.body);
+
   next();
 }, passport.authenticate('local-signup'), function(req, res){
   res.send({login: true, user: req.user});
@@ -89,15 +88,13 @@ app.get('/api/group/populate', groupCtrl.GetAndPopulateGroup);
 
 
 
-
-
 mongoose.connect('mongodb://localhost/journals');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('Mongoose connected');
+  console.log('mongoose connected')
 });
 
 app.listen(port, function(){
-  console.log('Unicorn + Pikachu + Hello Kitty = ' + port +' combo!');
+  console.log('listening on port ' + port);
 });

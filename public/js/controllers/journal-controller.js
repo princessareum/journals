@@ -17,7 +17,6 @@ angular.module('app').controller('journalController', function($scope, mainServi
   // $scope.currentUser();
 
 
-
   $scope.postJournal = function(journal){
     console.log($scope.images)
     journal.photo = $scope.images[0].Location;
@@ -26,7 +25,7 @@ angular.module('app').controller('journalController', function($scope, mainServi
     journal.album = $stateParams.albumId;
     journal.group = $stateParams.groupId;
     mainService.postJournal(journal).then(function(response){
-      // console.log(response._id);
+      //
       mainService.updateAlbum(journal.album, response._id).then(function(response){
         $state.go('journal',{
           groupId: $stateParams.groupId,
@@ -34,13 +33,13 @@ angular.module('app').controller('journalController', function($scope, mainServi
         })
       })
     })
-    var confirm = alert("Your journal has been posted!");
-  }
+  };
+
 
   // $scope.getJournal = function(){
   //   mainService.getJournal($scope.user._id).then(function(response){
   //     $scope.journals = response;
-  //     console.log(response);
+  //
   //   })
   // }
   //

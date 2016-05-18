@@ -7,11 +7,11 @@
           <h1>Edit Album</h1>
           <br>
           <br>
-          <input type="text" placeholder="Album Title" ng-model="album.title">
+          <input type="text" placeholder="Album Title" ng-model="selectedAlbum.title">
           <br>
-          <select ng-options="journal.photo as journal.title for journal in journals" ng-model="album.albumCover"></select>
+          <select ng-options="journal.photo as journal.title for journal in albumJournals" ng-model="selectedAlbum.albumCover"></select>
           <br>
-          <button type="button" ng-click="updateAlbum(album)">Edit Album</button>
+          <button type="button" ng-click="updateAlbum(selectedAlbum)">Edit Album</button>
         </div>
   </div>
 </div>

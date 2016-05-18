@@ -33,6 +33,8 @@ module.exports = {
   //     }
   //   })
   // },
+
+
   GetAlbum: function(req, res, next){
     Album.find(req.query)
     .populate('content', 'photo')
@@ -56,8 +58,10 @@ module.exports = {
     })
   },
 
+
   DeleteAlbum: function(req, res, next){
     Album.findByIdAndRemove(req.params.id, function(err, response){
+        console.log('album delete', err, response);
       if(err){
         res.status(500).json(err);
       } else {

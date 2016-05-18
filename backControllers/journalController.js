@@ -24,6 +24,7 @@ module.exports = {
   //   })
   // },
 
+
   GetJournal: function(req, res, next){
     Journal.find(req.query, function(err, response){
       if(err){
@@ -47,6 +48,7 @@ module.exports = {
   //   })
   // },
 
+
   UpdateJournal: function(req, res, next){
     Journal.findByIdAndUpdate(req.params.id, req.body, function(err, response){
       if(err){
@@ -57,8 +59,10 @@ module.exports = {
     })
   },
 
+
   DeleteJournal: function(req, res, next){
     Journal.findByIdAndRemove(req.params.id, function(err, response){
+      console.log(err, response);
       if(err){
         res.status(500).json(err);
       } else {

@@ -1,15 +1,14 @@
 <div class="modal" ng-show='modalShown'>
-  <div class="overlay" ng-click='toggleModal()'></div>
+  <div class="albumOverlay" ng-click='toggleModal()'></div>
   <div class="album-dialog">
-    <div class="modalContent"></div>
+    <!-- <div class="modalContent"></div> -->
         <div class='albumModal'>
+          <img src="http://www.ittybittybabybows.com/0_0_0_0_699_298_csupload_54367299.png?u=2993200838" alt="" />
           <br>
           <h1>Create Album</h1>
           <br>
           <br>
-          <input type="text" placeholder="Album Title" ng-model="album.title">
-          <br>
-          <!-- <select ng-options="journal.photo as journal.title for journal in journals" ng-model="album.albumCover"></select> -->
+          <input type="text" placeholder="  Album Title" ng-model="album.title">
           <br>
           <button type="button" ng-click="createAlbum(album)">Create Album</button>
         </div>

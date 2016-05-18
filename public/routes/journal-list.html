@@ -9,7 +9,7 @@
 <div ng-repeat="journal in journals track by $index" class="journal-list">
   <img src="{{journal.photo}}"><br>
   <div class="journal">
-    <div class="journal-date"><p>{{journal.date}}<p></div><br>
+    <div class="journal-date"><p>{{journal.date | date: MM/dd/yyyy}}<p></div><br>
     <div class="journal-title"><h2>{{journal.title}}<h2></div><br>
     <div class="journal-relationship"><p>{{journal.relationship}}<p></div><br>
     <div class="journal-contents"><p>{{journal.contents}}<p></div><br>

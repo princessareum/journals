@@ -12,6 +12,7 @@ module.exports = {
         })
       },
 
+
   // GetUser: function(req, res, next){
   //   User.find(function(err, response){
   //       if(err){
@@ -21,6 +22,7 @@ module.exports = {
   //       }
   //     })
   //   },
+
 
   GetUser: function(req, res, next){
     User.find(req.query, function(err, response){
@@ -32,6 +34,7 @@ module.exports = {
       })
     },
 
+
   UpdateUser: function(req, res, next){
     User.findByIdAndUpdate(req.params.id, req.body, function(err, response){
         if(err){
@@ -42,6 +45,7 @@ module.exports = {
       })
     },
 
+
   DeleteUser: function(req, res, next){
     User.findByIdAndRemove(req.params.id, function(err, response){
           if(err){
@@ -51,6 +55,7 @@ module.exports = {
           }
     })
   },
+
 
   Login: function(req, res, next){
     User.findOne(req.body, function(err, response){
@@ -66,12 +71,14 @@ module.exports = {
     })
   },
 
+
   CurrentUser: function(req, res, next){
     res.send(req.user);
   },
 
+
   GetUserByEmail: function(req, res, next){
-    console.log(req.body);
+
     User.find({
       userEmail: {
         $in: req.body.emails
@@ -84,11 +91,10 @@ module.exports = {
         res.status(200).json(response);
       }
     })
-
   },
 
+
   Logout: function(req, res, next){
-    console.log("logout", req.logout);
     req.logout();
     console.log("hit", req.user)
     return res.status(200).send('logged out');

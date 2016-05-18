@@ -3,16 +3,16 @@ var User = require('../models/userModel.js');
 
 module.exports = function(passport){
   passport.serializeUser(function(user, done){
-    console.log("USER", user);
     done(null, user._id);
   });
 
+
   passport.deserializeUser(function(_id, done){
-    console.log("ID", _id);
     User.findById(_id, function(err, user){
       done(err, user);
     });
   });
+
 
   passport.use('local-signup', new LocalStrategy({
     usernameField: 'userEmail',
@@ -24,10 +24,10 @@ module.exports = function(passport){
         if(err) return done(err);
         if(user) {
           if(user.validPassword(password)){
-            console.log('correct password: logging in');
+
             return done(null, user);
           }else {
-            console.log('Invalid email or password');
+
             return done(null, false);
           }
         } else {
@@ -36,7 +36,7 @@ module.exports = function(passport){
           newUser.password = newUser.generateHash(password);
           newUser.save(function(err){
             if(err) {
-              console.log(err);
+
               throw err;
             }
             return done(null, newUser);

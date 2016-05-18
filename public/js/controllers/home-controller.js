@@ -5,6 +5,7 @@ angular.module('app').controller('homeController', function($scope, user, mainSe
     $scope.modalShown = !$scope.modalShown;
   };
 
+
   $scope.login = function(user){
     mainService.login(user).then(function(response){
       if(response.login){ mainService.getUser(response.user._id).then(function(response){

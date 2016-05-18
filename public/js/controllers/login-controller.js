@@ -4,14 +4,13 @@ angular.module('app').controller('loginController', function($scope, mainService
     $scope.toggleModal = function(){
       $scope.modalShown = !$scope.modalShown;
     };
-  
+
 
   $scope.getUser = function(){
         mainService.getUser($scope.user._id).then(function(response){
             $scope.user = response;
         })
     };
-
 
   $scope.login = function(user){
     mainService.login(user).then(function(response){

@@ -60,11 +60,13 @@ angular.module('app').service('mainService', function($http){
     })
   }
 
+
+
 // Store photos to S3
   this.storeImage = function (imageData, fileName, user) {
       var imageExtension = imageData.split(';')[0].split('/');
       imageExtension = imageExtension[imageExtension.length - 1];
-      console.log(user);
+
       var newImage = {
         imageName: fileName,
         imageBody: imageData,
@@ -72,10 +74,12 @@ angular.module('app').service('mainService', function($http){
         userEmail: user.userEmail
       }
       return $http.post('/api/newimage', newImage).then(function(response){
-        console.log(response)
+        // console.log(response)
         return response.data;
       })
   };
+
+
 
 // Journal
   this.postJournal = function(journal){
@@ -124,6 +128,8 @@ angular.module('app').service('mainService', function($http){
       return response.data;
     })
   };
+
+
 
 // Group
   this.createGroup = function(group){
@@ -181,6 +187,8 @@ angular.module('app').service('mainService', function($http){
       return response.data;
     })
   }
+
+
 
 // Album
   this.createAlbum = function(album){

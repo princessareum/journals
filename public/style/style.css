@@ -1,127 +1,138 @@
-@import url(https://fonts.googleapis.com/css?family=Monofett|Quicksand:400,300);
-@import url(https://fonts.googleapis.com/css?family=Sniglet:400);
-@import url(https://fonts.googleapis.com/css?family=Cinzel:900,700,400);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic);
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-li, input, button {
-  font-family: 'Quicksand', sans-serif;
+input, p, li, button {
+  font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
-  font-family: 'Monofett', cursive;
-}
-
-h2, p {
-  font-family: 'Cinzel', serif;
-}
-
-
-/*navbar, home*/
-
-.navbar {
-  background: #F5E48E;
-  height: auto;
-  position: relative;
+h1, h2 {
+  font-family: 'Lato', sans-serif;
 }
 
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
+.fullContainer {
+  overflow: auto;
+  height: calc(100vh - 50px);
+}
+
+/*navbar, home*/
+
+.navbar {
+  background: #A2DFE0;
+  height: 50px;
+  position: relative;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
 .nav li{
   display: inline-block;
   text-decoration: none;
-  font-size: 5vw;
-  margin-top: 12.5px;
-  margin-left: 20px;
+  font-size: 15px;
   font-weight: bold;
+  color: #fff;
+  list-style: none;
+  margin: 10px 0 10px 10px;
+}
+
+.nav li a {
+  text-align: center;
+  padding: 14px 12px;
 }
 
 .home-baby-photo {
   width: 100%;
 }
 
+.home-description {
+  margin: 30px 30px;
+  padding: 20px;
+  font-size: 3vw;
+  text-align: center;
+  border: 8px dashed #A2DFE0;
+  background: #ffedf5;
+  /*box-shadow: 8px 8px 20px #aaa;*/
+}
+
+.home-description h2 {
+  margin-top: 20px;
+  color: #A2DFE0;
+  font-size: 10vw;
+}
+
+
+.home-photo1 {
+  width: 80%;
+  box-shadow: 8px 8px 20px #aaa;
+}
+
+.home-photo2 {
+  width: 80%;
+  border-radius: 100%;
+  opacity: 0.8;
+  box-shadow: 8px 8px 20px #aaa;;
+}
+
+
 
 /*signup*/
 
 .signup {
   text-align: center;
-  margin: 10%;
   padding-bottom: 10%;
-  border: ridge 5px #F2A0CA;
-  background: #edbdd5;
+  background-image: url(/img/ID-10060491.jpg);
+  background-size: cover;
 }
 
 .signup h1 {
-  margin-top: 30px;
-  font-size: 50px;
+  margin: 50px 0 15px 0;
+  padding-top: 30px;
+  font-size: 10vw;
+  font-weight: 800;
+  color: black;
+  z-index: 10;
 }
 
 .signup input {
   margin-bottom: 10px;
-  width: 150px;
-  height: 20px;
+  width: 80%;
+  height: 35px;
+  border: 1px solid #f2f2f2;
+  opacity: 0.9;
+}
+
+.signup input: focus{
+  outline: none;
 }
 
 .signup button {
-  width: 80px;
-  height: 30px;
+  width: 80%;
+  height: 35px;
   background: #BBD994;
   color: white;
   margin-top: 15px;
   font-size: 15px;
+  font-weight: 300;
+  border: none;
 }
+
+
 
 /*modal*/
-
-.modalContent img {
-  position: relative;
-  width: 30px;
-}
-
-.loginModal {
-  text-align: center;
-  z-index: 10;
-}
-
-.loginModal button {
-  width: 80px;
-  height: 30px;
-  background: #8DAAD9;
-  color: white;
-  margin-top: 15px;
-  font-size: 15px;
-}
-
-.loginModal input {
-  margin-bottom: 10px;
-  width: 150px;
-  height: 20px;
-}
-
-.loginModal h1{
-  margin-top: 30px;
-  font-size: 50px;
-}
-
-.login-dialog {
-  position: fixed;
-  width: 250px;
-  height: 450px;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  background-color: #fff;
-  background: #A2DFE0;
-  border: ridge 5px #69e0e0;;
-  /*border: 2px solid #00a7c9;*/
-}
 
 .overlay {
   position:fixed;
@@ -133,23 +144,147 @@ body {
   opacity: 0.8;
 }
 
-.dialog {
-  position: fixed;
-  width: 70vw;
-  height: 65vh;
-  top: 50%;
-  left: 50%;
-  background: white;
-  transform: translateY(-50%) translateX(-50%);
+
+/*login modal*/
+.login-overlay {
+  position:fixed;
+  top:0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.8;
+  z-index: 1;
 }
 
-.modalContent {
+.loginModalContent img {
+  position: relative;
+  width: 30px;
+}
+
+.loginModal {
+  text-align: center;
+  z-index: 10;
+}
+
+.loginModal button {
+  width: 80%;
+  height: 30px;
+  background: #8DAAD9;
+  color: white;
+  margin-top: 30px;
+  font-size: 15px;
+  border: none;
+}
+
+.loginModal input {
+  /*margin-bottom: 10px;*/
+  width: 80%;
+  height: 40px;
+  border: 2px solid #f2f2f2;
+  opacity: 0.9;
+}
+
+.loginModal h1{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 10vw;
+  font-weight: 700;
+}
+
+.loginModal p{
+  color: white;
+}
+
+.login-dialog {
+  z-index: 2;
+  position: fixed;
+  width: 250px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: #fff;
+  background-image: url(/img/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loginModalContent {
   padding:10px;
   text-align: center;
+}
 
+
+
+/*create group modal*/
+.group-overlay {
+  position:fixed;
+  top:0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.groupModal {
+  text-align: center;
+  z-index: 10;
+}
+
+.groupModal button {
+  width: 80%;
+  height: 30px;
+  background: #BBD994;
+  color: white;
+  margin-top: 30px;
+  font-size: 15px;
+  border: none;
+}
+
+.groupModal input {
+  margin-bottom: 10px;
+  width: 80%;
+  height: 40px;
+  border: 2px solid #f2f2f2;
+}
+
+
+.groupModal h1{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.groupModal p{
+  color: white;
 }
 
 .group-dialog {
+  z-index: 2;
+  position: fixed;
+  width: 250px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: #fff;
+  background-image: url(/img/bg5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.groupModal textarea{
+  width: 80%;
+}
+
+
+
+//
+/*.group-dialog {
   position: fixed;
   width: 250px;
   height: 450px;
@@ -189,7 +324,7 @@ body {
 
 .groupModal textarea {
   width: 200px;
-}
+}*/
 
 
 /*edit journal modal*/
@@ -252,13 +387,29 @@ body {
 
 /*create album modal*/
 
+.albumOverlay {
+  position:fixed;
+  top:0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.8;
+  z-index: 1;
+}
+
 .albumModal {
   text-align: center;
   padding: 0 20px;
   font-size: 12px;
 }
 
+.albumModal img {
+  width: 100%;
+}
+
 .album-dialog {
+  z-index: 1;
   position: fixed;
   width: 250px;
   height: 450px;
@@ -266,70 +417,155 @@ body {
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   background-color: #fff;
-  background: #BBD994;
-  border: 2px solid #95d83c;
+  background-image: url(/img/bg3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.albumModal {
+  margin-top: 50px;
 }
 
 .albumModal h1 {
   margin-top: 10px;
-  font-size: 50px;
+  font-size: 35px;
 }
 
 .albumModal button {
-  width: 150px;
+  width: 80%;
   height: 30px;
   background: #A2DFE0;
+  border: none;
   color: white;
   margin-top: 15px;
   font-size: 15px;
 }
 
 .albumModal input {
-  margin-bottom: 10px;
-  width: 150px;
-  height: 20px;
+  border: 1px solid #f2f2f2;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  width: 80%;
+  height: 30px;
 }
 
 .albumModal select {
   background: #fff;
 }
 
+/*group edit*/
+
+
+
+.edit-group-dialog {
+  position: fixed;
+  width: 250px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: #fff;
+  background: #8DAAD9;
+  border: 2px solid #749de0;
+}
+
+.editGroupModal {
+  text-align: center;
+  padding: 0 20px;
+  font-size: 12px;
+}
+
+.editGroupModal h1 {
+  margin-top: 10px;
+  font-size: 50px;
+}
+
+.editGroupModal button {
+  width: 150px;
+  height: 30px;
+  background: #F2A0CA;
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.editGroupModal input {
+  margin-bottom: 10px;
+  width: 150px;
+  height: 20px;
+}
+
+.editGroupModal textarea {
+  width: 200px;
+}
+
+
 
 /*group*/
 
-.create-group {
-  display: inline-block;
-  position: relative;
+.groupBody {
+  text-align: center;
 }
 
-.family-photo {
+.groups {
+  text-align: center;
+  background: #BBD994;
+  /*margin: 0 10%;*/
   width: 100%;
 }
 
-.create-group h1 {
-  text-align: center;
-  display: inline-block;
-}
-
-.group-list {
-  text-align: center;
-  background: #BBD994;
-  margin: 0 10%;
-}
-
-.group-name li{
-  list-style: none;
+.group-name {
   font-size: 20px;
-  border: 1px solid lightgray;
+  word-wrap: break-word;
+  margin-top: 15px;
 }
 
+.groupEdit {
+  margin: 5px 0;
+  background: #e1efce;
+}
 
+.groupEdit button {
+  margin: 5px 0;
+  /*background: white;*/
+  padding: 2px 10px;
+}
+
+.editGroup button {
+  background: #F2A0CA;
+}
+
+.createGroupFooter {
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  height: 45px;
+  position: fixed;
+  bottom: 0;
+  background-color: #F2A0CA;
+}
+
+.create-group {
+  margin-top: 10px;
+}
+
+.create-group p {
+  color: white;
+}
 
 /*album*/
 
+.album-container {
+  height: 150px;
+}
+
+.alternate {
+  background-color: #f2f2f2;
+}
+
 .create-album {
-  display: inline-block;
   position: relative;
+  text-align: center;
 }
 
 .create-album h1 {
@@ -339,15 +575,75 @@ body {
 
 .album-list {
   text-align: center;
-  margin: 0 10%;
+  padding-bottom: 45px;
+}
+
+.albums {
+  background-color: #fcfcfc;
+  width: 100%;
+  /*float: left;*/
+  height: 150px;
+  background-color: white;
+  position: relative;
 }
 
 .album-cover {
-  width: 250px;
-  height: 250px;
+  width: 120px;
+  height: 150px;
+  float: right;
+}
+
+.album-name {
+  position: relative;;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+
+.album-name p{
+  word-wrap: break-word;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.album_buttons{
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
 }
 
 
+.album_buttons button {
+  margin: 5px 0;
+  /*background: #F5E48E;*/
+  padding: 2px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.albumEdit {
+  width: calc(100vw - 120px);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.createAlbumFooter {
+  text-align: center;
+  width: 100%;
+  height: 45px;
+  position: fixed;
+  bottom: 0;
+  background-color: #F2A0CA;
+}
+
+.create-album {
+  margin-top: 10px;
+}
+
+.create-album p {
+  color: white;
+}
 
 /*create journals*/
 
@@ -368,7 +664,7 @@ body {
 
 .journal-list img{
   width: 250px;
-  height: 250px;
+  height: auto;
 }
 
 .journal-title h2 {
@@ -425,24 +721,4 @@ body {
 
 .journal-entry textarea {
   margin-top: 10px;
-}
-
-/*footer*/
-footer {
-  background: black;
-  height: 80px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  z-index: -10;
-}
-
-.location, .hours, .sns {
-  margin-top: 30px;
-  flex: 1;
-  text-align: center;
-  font-size: 15px;
 }

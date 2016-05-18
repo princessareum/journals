@@ -5,17 +5,19 @@ angular.module('app').controller('albumController', function($scope, mainService
     $scope.modalShown = !$scope.modalShown;
   };
 
-  $scope.editModalShown = false;
-  $scope.editToggleModal = function(){
-    $scope.editModalShown = !$scope.editModalShown;
-  };
 
+  $scope.editModalShown = false;
+  $scope.editToggleModal = function(album){
+    $scope.editModalShown = !$scope.editModalShown;
+    if(album){
+      $scope.selectedAlbum = album;
+    }
+  };
 
 
   $scope.user = user;
   $scope.groupId = $stateParams.groupId;
   $scope.albumId = $stateParams.albumId;
-
 
 
 
@@ -48,15 +50,22 @@ angular.module('app').controller('albumController', function($scope, mainService
   $scope.getJournal();
 
 
+  $scope.getJournalByAlbum = function(albumId){
+    mainService.getJournalByAlbum(albumId).then(function(response){
+      $scope.albumJournals = response;
+    })
+  };
+
+
   $scope.selectAlbum = function(album){
     $scope.selectedAlbum = album;
-
   };
+
 
   $scope.updateAlbum = function(album){
       mainService.updateAlbum(album).then(function(response){
         $scope.updatedAlbum = response;
-        $scope.getAlbum();
+        $scope.getAlbum($scope.groupId);
         $scope.editToggleModal();
       });
   };
@@ -65,7 +74,7 @@ angular.module('app').controller('albumController', function($scope, mainService
   $scope.deleteAlbum = function(albumId){
       mainService.deleteAlbum(albumId).then(function(response){
         $scope.albumList = response;
-        $scope.getAlbum();
+        $scope.getAlbum($scope.groupId);
       })
   };
 

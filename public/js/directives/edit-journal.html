@@ -9,11 +9,10 @@
             <input type="text" placeholder="Title" ng-model="selectedJournal.title"><br><br>
             <input type="file" fileread accept="image/*" ng-model='selectedJournal.photo' id="journal-entry-file"><br><br>
             <textarea rows="8" cols="40" placeholder="Journal Entry" ng-model=selectedJournal.contents></textarea><br><br>
-
             <button type="button" ng-click="updateJournal(journal)">
               <ui-sref="journal({groupId: groupId, albumId: albumId})">Edit</ui-sref>
             </button>
-            <button type="button"><ui-sref="journal({groupId: groupId, albumId: albumId})">Cancel</ui-sref></button>
+            <button type="button" ng-click="toggleJournalModal()">Cancel</button>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@
       <div class="albumEdit" ng-if="user._id === album.author">
       </div>
     </div>
-    <div class="album_buttons">
+    <div ng-if="user._id === album.author" class="album_buttons">
       <button type="button" ng-click="editToggleModal(album); getJournalByAlbum(album._id)">Edit</button>
       <button type="button" ng-click="deleteAlbum(album._id)">Delete</button>
     </div>

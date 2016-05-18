@@ -3,10 +3,8 @@ angular.module('app').controller('groupController', function($scope, user, mainS
   $scope.modalShown = false;
   $scope.toggleModal = function(){
     $scope.modalShown = !$scope.modalShown;
-    console.log("hit");
   };
 
-console.log("start");
 
   $scope.editModalShown = false;
   $scope.toggleEditModal = function(){

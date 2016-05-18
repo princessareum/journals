@@ -19,6 +19,68 @@ body {
   overflow-x: hidden;
 }
 
+/*test*/
+
+
+header{
+	width:100%;
+	background:#A2DFE0;
+	height:50px;
+	line-height:50px;
+}
+.hamburger{
+  background:none;
+  position:absolute;
+  top:0;
+  right:0;
+  line-height:45px;
+  padding:0px 15px 0px 15px;
+  color:#fff;
+  border:0;
+  font-size:1.4em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.cross{
+  background:none;
+  position:absolute;
+  top:0px;
+  right:0;
+  padding:0px 15px 0px 15px;
+  color:#fff;
+  border:0;
+  font-size:3em;
+  line-height:65px;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#b5e0e0;  position:absolute; text-align:center;}
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:15px 0 15px 0; border-bottom:#e8ffff 1px solid;}
+.menu li:hover{display: block;    background:#56d8d8; padding:15px 0 15px 0; border-bottom:#e8ffff 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px; color:#fff;}
+.menu ul li a:hover {  color: #fff; text-decoration:none;}
+.menu a{text-decoration:none; color:white;}
+.menu a:hover{text-decoration:none; color:white;}
+
+.glyphicon-home{
+  color:white;
+  font-size:1.5em;
+  margin-top:5px;
+  margin:0 auto;
+}
+
+
+
+/*test*/
+
+
+
+
 .fullContainer {
   overflow: auto;
   height: calc(100vh - 50px);
@@ -208,6 +270,7 @@ body {
   background-image: url(/img/bg2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
 }
 
 .loginModalContent {
@@ -249,6 +312,7 @@ body {
   width: 80%;
   height: 40px;
   border: 2px solid #f2f2f2;
+  opacity: 0.9;
 }
 
 
@@ -272,13 +336,15 @@ body {
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   background-color: #fff;
-  background-image: url(/img/bg5.jpg);
+  background-image: url(/img/bg7.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
 }
 
 .groupModal textarea{
   width: 80%;
+  opacity: 0.9;
 }
 
 
@@ -350,7 +416,7 @@ body {
   transform: translateY(-50%) translateX(-50%);
   background-color: #fff;
   background: #8DAAD9;
-  border: 2px solid #749de0;
+  border-radius: 10px;
 }
 
 .journalModal {
@@ -405,6 +471,7 @@ body {
 }
 
 .albumModal img {
+  margin-top: -20px;
   width: 100%;
 }
 
@@ -420,6 +487,7 @@ body {
   background-image: url(/img/bg3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
 }
 
 .albumModal {
@@ -449,9 +517,6 @@ body {
   height: 30px;
 }
 
-.albumModal select {
-  background: #fff;
-}
 
 /*group edit*/
 
@@ -466,7 +531,7 @@ body {
   transform: translateY(-50%) translateX(-50%);
   background-color: #fff;
   background: #8DAAD9;
-  border: 2px solid #749de0;
+  border-radius: 10px;
 }
 
 .editGroupModal {
@@ -499,6 +564,65 @@ body {
   width: 200px;
 }
 
+/*album edit*/
+
+.edit-album-overlay {
+  position:fixed;
+  top:0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.edit-album-dialog {
+  position: fixed;
+  width: 250px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: #fff;
+  background-image: url(/img/bg6.jpg);
+  background-size: cover;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.edit-album-modal {
+  text-align: center;
+  padding: 0 20px;
+  font-size: 12px;
+}
+
+.edit-album-modal h1 {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  font-size: 35px;
+}
+
+.edit-album-modal button {
+  width: 80%;
+  height: 30px;
+  background: #F2A0CA;
+  color: white;
+  margin-top: 30px;
+  font-size: 15px;
+  border: none;
+}
+
+.edit-album-modal input {
+  margin-bottom: 10px;
+  width: 80%;
+  height: 30px;
+  opacity: 0.9;
+}
+
+.edit-album-modal select {
+  background: #fff;
+}
 
 
 /*group*/
@@ -611,7 +735,6 @@ body {
   bottom: 10px;
   left: 25px;
 }
-
 
 .album_buttons button {
   margin: 5px 0;

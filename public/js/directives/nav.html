@@ -8,15 +8,21 @@
 </div> -->
 
 <header>
+  <span class="header-item" ng-if="state === 'group'"><p>Groups</p></span>
+  <span class="header-item" ng-if="state === 'album'"><i class="fa fa-arrow-circle-left" aria-hidden="true" ui-sref="group({id: user.id})"></i></span>
+  <span class="header-item" ng-if="state === 'album'"><p>{{group.name}}</p></span>
+  <span class="header-item" ng-if="state === 'journal'"><i class="fa fa-arrow-circle-left" aria-hidden="true" ui-sref="album({groupId: groupId, albumId: albumId})"></i></span>
+  <span class="header-item" ng-if="state === 'journal'"><p>{{album.title}}</p></span>
+  <span class="header-item" ng-if="state === 'journalentry'"><p>New Journal Entry</p></span>
   <button class="hamburger">&#9776;</button>
   <button class="cross">&#735;</button>
 </header>
 
 <div class="menu">
   <ul>
-    <a ui-sref="group" ui-sref-active="active"><li>Groups</li></a>
+    <a><li>Welcome, {{user.name.firstName}} {{user.name.lastName}}!</li></a>
+    <a ui-sref="group" ui-sref-active="active" ng-if="state !== 'group'"><li>Groups</li></a>
     <a ng-click="logout()"><li>Logout</li></a>
-    <a ui-sref="signup" ui-sref-active="active"><li>Welcome, {{user.name.firstName}} {{user.name.lastName}}!</li></a>
     <!-- <a href="#"><li>LINK FOUR</li></a>
     <a href="#"><li>LINK FIVE</li></a> -->
   </ul>

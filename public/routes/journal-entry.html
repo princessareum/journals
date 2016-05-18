@@ -1,10 +1,9 @@
-
+<nav-directive></nav-directive>
 <div class="journal-entry">
-  <h1>Journal Entry</h1>
-  <input type="date" placeholder="Date" ng-model="journal.date"><br><br>
-  <input type="text" placeholder="Title" ng-model="journal.title"><br><br>
-  <input type="file" fileread accept="image/*" ng-model='journal.photo' id="journal-entry-file"><br><br>
-  <textarea rows="8" cols="40" placeholder="Journal Entry" ng-model=journal.contents></textarea><br><br>
+  <p>Date:</p><input type="date" placeholder="Date" ng-model="journal.date"><br><br>
+  <p>Title:</p><input type="text" placeholder="Title" ng-model="journal.title"><br><br>
+  <p>Photo:</p><input type="file" fileread accept="image/*" ng-model='journal.photo'><br><br>
+  <p>Journal Entry:</p><textarea rows="8" cols="40" placeholder="Journal Entry" ng-model=journal.contents></textarea><br><br>
   <button type="button" ng-click="postJournal(journal)" ui-sref="journal({groupId: groupId, albumId: albumId})">Submit</button>
   <button type="button" ui-sref="journal({groupId: groupId, albumId: albumId})">Cancel</button>
 </div>

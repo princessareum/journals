@@ -19,16 +19,27 @@ body {
   overflow-x: hidden;
 }
 
-/*test*/
+/*menu*/
 
 
-header{
+header {
 	width:100%;
 	background:#A2DFE0;
 	height:50px;
 	line-height:50px;
 }
-.hamburger{
+
+.header-item p, i{
+  display: inline-block;
+  color: white;
+  margin-left: 15px;
+}
+
+.header-item p {
+  font-size: 20px;
+}
+
+.hamburger {
   background:none;
   position:absolute;
   top:0;
@@ -41,9 +52,9 @@ header{
   font-weight:bold;
   cursor:pointer;
   outline:none;
-  z-index:10000000000000;
+  z-index:10;
 }
-.cross{
+.cross {
   background:none;
   position:absolute;
   top:0px;
@@ -56,18 +67,51 @@ header{
   font-weight:bold;
   cursor:pointer;
   outline:none;
-  z-index:10000000000000;
+  z-index:10;
 }
-.menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#b5e0e0;  position:absolute; text-align:center;}
-.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
-.menu li {display: block;   padding:15px 0 15px 0; border-bottom:#e8ffff 1px solid;}
-.menu li:hover{display: block;    background:#56d8d8; padding:15px 0 15px 0; border-bottom:#e8ffff 1px solid;}
-.menu ul li a { text-decoration:none;  margin: 0px; color:#fff;}
-.menu ul li a:hover {  color: #fff; text-decoration:none;}
-.menu a{text-decoration:none; color:white;}
-.menu a:hover{text-decoration:none; color:white;}
+.menu {
+  z-index:1;
+  font-weight:bold;
+  font-size:0.8em;
+  width:100%;
+  background:#b5e0e0;
+  position:absolute;
+  text-align:center;}
 
-.glyphicon-home{
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;}
+
+.menu li {
+  display: block;
+  padding:15px 0 15px 0;
+  border-bottom:#e8ffff 1px solid;}
+
+.menu li:hover {
+  display: block;
+  background:#56d8d8;
+  padding:15px 0 15px 0;
+  border-bottom:#e8ffff 1px solid;}
+
+.menu ul li a {
+  text-decoration:none;
+  margin: 0px; color:#fff;}
+
+.menu ul li a:hover {
+  color: #fff;
+  text-decoration:none;}
+
+.menu a {
+  text-decoration:none;
+  color:white;}
+
+.menu a:hover {
+  text-decoration:none;
+  color:white;}
+
+.glyphicon-home {
   color:white;
   font-size:1.5em;
   margin-top:5px;
@@ -76,7 +120,7 @@ header{
 
 
 
-/*test*/
+/*menu end*/
 
 
 
@@ -780,14 +824,18 @@ header{
 }
 
 .journal-list {
-  text-align: center;
-  border: 10px double #A2DFE0;
-  margin: 30px 25px;
+  /*text-align: center;*/
+  /*border: 10px double #A2DFE0;*/
+  /*margin: 30px 25px;*/
+}
+
+.journal-list-photos {
+  width: 33.33%;
+  border: 2px solid red;
 }
 
 .journal-list img{
-  width: 250px;
-  height: auto;
+  width:100%;
 }
 
 .journal-title h2 {
@@ -810,20 +858,38 @@ header{
   white-space: pre-wrap;
 }
 
+.createJournalEntryFooter {
+  text-align: center;
+  width: 100%;
+  height: 45px;
+  position: fixed;
+  bottom: 0;
+  background-color: #F2A0CA;
+}
+
+.create-journal {
+  margin-top: 10px;
+}
+
+.create-journal p {
+  color: white;
+}
+
+
+
+/*journal entry*/
+
 .journal-entry {
   background: #F2A0CA;
-  border: 5px solid #8DAAD9;
   text-align: center;
   padding: 20px 0;
   margin: 30px 20px;
 }
 
-.journal-entry h1 {
-  margin-bottom: 20px;
-}
 
 .journal-entry input {
-  width: 160px;
+  width: 80%;
+  height: 30px;
   height: 22px;
   background: white;
 }
@@ -835,6 +901,7 @@ header{
   color: white;
   margin-top: 15px;
   font-size: 15px;
+  border: none;
 }
 
 .journal-entry p {

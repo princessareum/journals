@@ -20,7 +20,6 @@ angular.module('app').controller('albumController', function($scope, mainService
   $scope.albumId = $stateParams.albumId;
 
 
-
   $scope.createAlbum = function(album){
     album.group = $stateParams.groupId;
     album.author = $scope.user._id;
@@ -77,5 +76,7 @@ angular.module('app').controller('albumController', function($scope, mainService
         $scope.getAlbum($scope.groupId);
       })
   };
+
+
 
 });

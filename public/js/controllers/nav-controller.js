@@ -1,4 +1,34 @@
-angular.module('app').controller('navController', function($scope, mainService, $state){
+angular.module('app').controller('navController', function($scope, mainService, $state, $stateParams){
+
+  $scope.state = $state.current.name;
+  console.log($scope.state);
+
+  $scope.getGroupById = function(){
+    mainService.getGroupById($stateParams.groupId).then(function(response){
+      $scope.group = response[0];
+      console.log($scope.group);
+    });
+  }
+
+  $scope.getAlbumById = function(){
+    mainService.getAlbumById($stateParams.albumId).then(function(response){
+      $scope.album = response[0];
+      console.log($scope.album);
+    });
+  }
+
+
+
+
+  if($scope.state === 'album'){
+    $scope.groupId = $stateParams.groupId;
+    $scope.getGroupById();
+  }
+  if ($scope.state === 'journal' || $scope.state === 'journalentry') {
+    $scope.groupId = $stateParams.groupId;
+    $scope.albumId = $stateParams.albumId;
+    $scope.getAlbumById();
+  }
 
   // function($scope, mainService, $state){
     $scope.logout = function(){

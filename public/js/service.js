@@ -151,6 +151,16 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
+  this.getGroupById = function(groupId){
+    return $http({
+      method: 'GET',
+      url: '/api/group?_id='+ groupId
+    }).then(function(response){
+      return response.data;
+    })
+  };
+
+
   this.getAndPopulateGroup = function(groupId){
     return $http({
       method: 'GET',
@@ -205,6 +215,15 @@ angular.module('app').service('mainService', function($http){
     return $http({
       method: 'GET',
       url: '/api/album?group='+groupId
+    }).then(function(response){
+      return response.data;
+    })
+  };
+
+  this.getAlbumById = function(albumId){
+    return $http({
+      method: 'GET',
+      url: '/api/album?_id='+albumId
     }).then(function(response){
       return response.data;
     })

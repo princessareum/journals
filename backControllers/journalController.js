@@ -26,7 +26,8 @@ module.exports = {
 
 
   GetJournal: function(req, res, next){
-    Journal.find(req.query, function(err, response){
+    Journal.find(req.query).populate('author')
+    .exec(function(err, response){
       if(err){
         res.status(500).json(err);
       } else {
@@ -36,17 +37,17 @@ module.exports = {
   },
 
 
-  // GetJournalById: function(req, res, next){
-  //   Journal.findById(req.params.id)
-  //   .populate({path: 'author.relationToBaby'})
-  //   .exec(function(err, response){
-  //     if(err){
-  //       res.status(500).json(err);
-  //     } else {
-  //       res.status(200).json(response);
-  //       }
-  //   })
-  // },
+  GetJournalById: function(req, res, next){
+    Journal.findById(req.params.id)
+    .populate({path: 'author.relationToBaby'})
+    .exec(function(err, response){
+      if(err){
+        res.status(500).json(err);
+      } else {
+        res.status(200).json(response);
+        }
+    })
+  },
 
 
   UpdateJournal: function(req, res, next){

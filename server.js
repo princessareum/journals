@@ -67,7 +67,7 @@ app.post('/api/newimage', serverController.SaveImage);
 //Journal
 app.post('/api/journal',journalCtrl.CreateJournal);
 app.get('/api/journal', journalCtrl.GetJournal);
-// app.get('/api/journal/:id', journalCtrl.GetJournalById);
+app.get('/api/journal/:id', journalCtrl.GetJournalById);
 app.put('/api/journal/:id', journalCtrl.UpdateJournal);
 app.delete('/api/journal/:id', journalCtrl.DeleteJournal);
 

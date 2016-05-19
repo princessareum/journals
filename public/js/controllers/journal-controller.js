@@ -21,7 +21,7 @@ angular.module('app').controller('journalController', function($scope, mainServi
     console.log($scope.images)
     journal.photo = $scope.images[0].Location;
     journal.author = $scope.user._id;
-    journal.relationship = $scope.user.relationToBaby;
+    // journal.relationship = $scope.user.relationToBaby;
     journal.album = $stateParams.albumId;
     journal.group = $stateParams.groupId;
     mainService.postJournal(journal).then(function(response){

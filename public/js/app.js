@@ -75,7 +75,7 @@ angular.module('app', ['ui.router'])
       })
 
       .state('journal', {
-        url: '/journals/:groupId/:albumId',
+        url: '/journallist/:groupId/:albumId',
         templateUrl: './routes/journal-list.html',
         controller: 'journalListController',
         resolve: {
@@ -91,6 +91,34 @@ angular.module('app', ['ui.router'])
                 }
           }
       })
+
+      .state('journaldetail', {
+        url: '/journaldetail/:groupId/:albumId/:journalId',
+        // url: '/journaldetail',
+        // params: {
+        //   'groupId': null,
+        //   'albumId': null,
+        //   'journalId': null,
+        // },
+        templateUrl: './routes/journal-detail.html',
+        controller: 'journalDetailController',
+        resolve: {
+          user: function(mainService, $state){
+            console.log("Starting resolve");
+                  return mainService.currentUser().then(function(response){
+                    console.log("Inside response");
+                    if(!response){
+                      console.log("no response");
+                      $state.go('home');
+                    }
+                    return response;
+                  }).catch(function(err){
+                    console.log("no response");
+                    $state.go('home');
+                  })
+                }
+          }
+      });
 
 
 

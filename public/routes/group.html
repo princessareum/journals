@@ -1,29 +1,25 @@
+<nav-directive></nav-directive>
 
-<!-- <img class="family-photo" src="./img/family.jpg" alt="" /> -->
-<div>
-  <nav-directive></nav-directive>
-<!--
-  <div class="groupBody fullContainer">
-        <h1>My Groups</h1>
-    <br>
-    <br> -->
-    <div class="group-list">
-      <div class="groups" ng-repeat="group in groups track by $index">
-        <div class="groups" ui-sref="album({groupId: group._id})">
-            <div class="group-name">{{group.name}}</div>
-        </div>
-        <div ng-if="user._id === group.admin" class="groupEdit">
-          <button type="button" ng-click="toggleEditModal(); selectGroup(group._id)">Edit</button>
-          <edit-group ng-show="editModalShown"></edit-group>
-          <button type="button" ng-click="deleteGroup(group._id)">Delete</button>
-        </div>
-      </div>
+<div class="group-list">
+  <div class="groups" ng-repeat="group in groups track by $index">
+
+    <div class="groups-list" ui-sref="album({groupId: group._id})">
+        <div class="group-name">{{group.name}}</div>
     </div>
-  <!-- </div> -->
 
-  <footer class="createGroupFooter" ng-click="toggleModal()">
-    <div class="create-group"><p>Create Group</p></div>
-  </footer>
-  <group-directive ng-show='modalShown'></group-directive>
+    <div class="groupEditContainer">
+      <button ng-if="user._id === group.admin" class="groupEdit" type="button" ng-click="toggleEditModal(); selectGroup(group._id)">Edit</button>
+      <button ng-if="user._id === group.admin" class="groupEdit" type="button" ng-click="deleteGroup(group._id)">Delete</button>
+      <edit-group ng-show="editModalShown"></edit-group>
+    </div>
 
+  </div>
 </div>
+
+<div class="spacer"></div>
+
+<footer class="createGroupFooter" ng-click="toggleModal()">
+  <div class="create-group"><p>Create Group</p></div>
+</footer>
+
+<group-directive ng-show='modalShown'></group-directive>

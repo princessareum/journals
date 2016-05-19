@@ -1,5 +1,6 @@
 angular.module('app').controller('loginController', function($scope, mainService, $state){
 
+
   $scope.modalShown = false;
     $scope.toggleModal = function(){
       $scope.modalShown = !$scope.modalShown;

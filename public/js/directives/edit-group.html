@@ -1,7 +1,7 @@
 <div class="modal" ng-show='editModalShown'>
-  <div class="overlay" ng-click='toggleEditModal()'></div>
+  <div class="edit-group-overlay" ng-click='toggleEditModal()'></div>
   <div class="edit-group-dialog">
-    <div class="modalContent"></div>
+    <div class="edit-group-modal-Content"></div>
         <div class='editGroupModal'>
           <br>
           <h1>Edit Group</h1>
@@ -10,7 +10,7 @@
           <input type="text" placeholder="Group Name" ng-model="selectedGroup.name">
           <br>
           <textarea rows="8" cols="40" placeholder="Members email addresses" ng-model="selectedGroup.users"></textarea>
-          <br>
+          <br><br>
           <button type="button" ng-click="getUserByEmail(selectedGroup.users, 'update')">Edit Group</button>
         </div>
   </div>

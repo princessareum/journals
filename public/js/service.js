@@ -101,6 +101,15 @@ angular.module('app').service('mainService', function($http){
     })
   };
 
+  this.getJournalById = function(journalId){
+    return $http({
+      method: 'GET',
+      url: '/api/journal/'+journalId
+    }).then(function(response){
+      return response.data;
+    })
+  };
+
   this.getJournalByAlbum = function(albumId){
     return $http({
       method: 'GET',

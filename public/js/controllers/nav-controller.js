@@ -6,16 +6,15 @@ angular.module('app').controller('navController', function($scope, mainService, 
   $scope.getGroupById = function(){
     mainService.getGroupById($stateParams.groupId).then(function(response){
       $scope.group = response[0];
-      console.log($scope.group);
     });
   }
 
   $scope.getAlbumById = function(){
     mainService.getAlbumById($stateParams.albumId).then(function(response){
       $scope.album = response[0];
-      console.log($scope.album);
     });
   }
+
 
 
 

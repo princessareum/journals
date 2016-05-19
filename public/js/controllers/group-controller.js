@@ -53,6 +53,7 @@ angular.module('app').controller('groupController', function($scope, user, mainS
       //
       $scope.getGroup();
       $scope.toggleModal();
+      $scope.group = "";
     })
   };
 

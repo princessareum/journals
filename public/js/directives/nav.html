@@ -1,19 +1,13 @@
-<!-- <div class="navbar">
-  <ul class="nav">
-    <li class="nav-item"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></li>
-    <li class="nav-item" ui-sref="group"><a>Groups</a></li>
-    <li class="nav-item" ng-click="logout()"><a>Logout</a></li>
-    <li class="nav-item"><a>{{user.name.firstName}} {{user.name.lastName}}</a></li>
-  </ul>
-</div> -->
-
 <header>
   <span class="header-item" ng-if="state === 'group'"><p>Groups</p></span>
   <span class="header-item" ng-if="state === 'album'"><i class="fa fa-arrow-circle-left" aria-hidden="true" ui-sref="group({id: user.id})"></i></span>
   <span class="header-item" ng-if="state === 'album'"><p>{{group.name}}</p></span>
   <span class="header-item" ng-if="state === 'journal'"><i class="fa fa-arrow-circle-left" aria-hidden="true" ui-sref="album({groupId: groupId, albumId: albumId})"></i></span>
   <span class="header-item" ng-if="state === 'journal'"><p>{{album.title}}</p></span>
+  <span class="header-item" ng-if="state === 'journalentry'"><i class="fa fa-arrow-circle-left" aria-hidden="true" ui-sref="journal({groupId: groupId, albumId: albumId})"></i></span>
   <span class="header-item" ng-if="state === 'journalentry'"><p>New Journal Entry</p></span>
+  <span class="header-item" ng-if="state === 'journaldetail'"><i class="fa fa-arrow-circle-left" aria-hidden="true" ui-sref="journal({groupId: groupId, albumId: albumId})"></i></span>
+  <span class="header-item" ng-if="state === 'journaldetail'"><p>Special Moment</p></span>
   <button class="hamburger">&#9776;</button>
   <button class="cross">&#735;</button>
 </header>
@@ -22,8 +16,7 @@
   <ul>
     <a><li>Welcome, {{user.name.firstName}} {{user.name.lastName}}!</li></a>
     <a ui-sref="group" ui-sref-active="active" ng-if="state !== 'group'"><li>Groups</li></a>
+    <a ui-sref="album({groupId: groupId, albumId: albumId})" ui-sref-active="active" ng-if="state !== 'album' && state !== 'group'"><li>Albums</li></a>
     <a ng-click="logout()"><li>Logout</li></a>
-    <!-- <a href="#"><li>LINK FOUR</li></a>
-    <a href="#"><li>LINK FIVE</li></a> -->
   </ul>
 </div>

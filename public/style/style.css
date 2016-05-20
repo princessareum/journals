@@ -1320,12 +1320,22 @@ header {
   }
 
 /*album list*/
+
+  .album-list {
+    width: 70%;
+    margin: auto;
+  }
+
   .album-container {
     height: 200px;
   }
 
+  .albums {
+    height: 200px;
+  }
+
   .album-cover {
-    width: 150px;
+    width: 200px;
     height: 200px;
   }
 
@@ -1334,7 +1344,7 @@ header {
   }
 
   .album_buttons {
-    margin-bottom: -40px;
+    margin-bottom: 20px;
   }
 
   .album_buttons button {
@@ -1421,8 +1431,8 @@ header {
 
   .journal-photo {
     margin: 80px auto;
-    width: 500px;
-    height: 600px;
+    width: 450px;
+    height: 550px;
   }
 
   .journal-photo:before {
@@ -1454,7 +1464,7 @@ header {
 
   .journal-photo img {
     max-width: 350px;
-    max-height: 400px;
+    max-height: 350px;
     margin-bottom: 20px;
   }
 
@@ -1474,13 +1484,40 @@ header {
   .journal-edit-buttons button {
     color: #fff;
     border: none;
-    width: 100px;
+    width: 150px;
+    height: 45px;
     padding: 5px 20px;
     margin: 12px 20px;
     background: #8DAAD9;
     font-size: 20px;
     /*margin-bottom: 50px;*/
   }
+
+/*journal list */
+
+   .journal-list img{
+      height: 250px;
+  }
+
+
+
+/*edit journal modal*/
+
+/*login dialog*/
+  .edit-journal-dialog {
+    width: 350px;
+    height: 650px;
+  }
+
+  .edit-journal h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+
+  .edit-journal input, .edit-journal button {
+    height: 40px;
+  }
+
 
 
 } /*end of media query*/
@@ -1530,6 +1567,17 @@ header {
   }
 
 
+
+/*journal list*/
+
+  .journal-list {
+    width: 25%;
+
+  }
+
+  .journal-list img{
+     height: 300px;
+  }
 
 
 

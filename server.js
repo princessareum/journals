@@ -4,7 +4,7 @@ var cors = require('cors');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('passport');
-var port = 3000;
+var port = 80;
 var app = express();
 
 //keys

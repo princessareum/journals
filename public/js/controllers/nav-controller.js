@@ -1,7 +1,7 @@
 angular.module('app').controller('navController', function($scope, mainService, $state, $stateParams){
 
   $scope.state = $state.current.name;
-  console.log($scope.state);
+  // console.log($scope.state);
 
   $scope.getGroupById = function(){
     mainService.getGroupById($stateParams.groupId).then(function(response){

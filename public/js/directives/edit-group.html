@@ -3,15 +3,28 @@
   <div class="edit-group-dialog">
     <div class="edit-group-modal-Content"></div>
         <div class='editGroupModal'>
-          <br>
           <h1>Edit Group</h1>
           <br>
           <br>
           <input type="text" placeholder="Group Name" ng-model="selectedGroup.name">
           <br>
-          <textarea rows="8" cols="40" placeholder="Members email addresses" ng-model="selectedGroup.users"></textarea>
-          <br><br>
-          <button type="button" ng-click="getUserByEmail(selectedGroup.users, 'update')">Edit Group</button>
+
+          <div class="email-list">
+
+            <div ng-repeat="user in selectedGroup.users track by $index">
+              {{user}}
+            <span type="button" name="button" ng-click="removeMember($index)"><i class="fa fa-times-circle" style="color:black" aria-hidden="true"></i></span>
+            </div>
+          </div>
+
+          <input type="text" placeholder="Members email addresses" ng-model="newMember">
+          <br>
+          <div class="editMembers">
+            <button type="button" name="button" ng-click="addMember(newMember)">Add Members</button>
+          </div>
+          <!-- <textarea rows="8" cols="40" placeholder="Members email addresses" ng-model="selectedGroup.users"></textarea> -->
+          <br>
+          <button type="button" ng-click="getUserByEmail(selectedGroup.users, 'update')">Save</button>
         </div>
   </div>
 </div>

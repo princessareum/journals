@@ -1,9 +1,4 @@
 <nav-directive></nav-directive>
-<!--
-<div class="create-album">
-  <i class="fa fa-arrow-left fa-2x" aria-hidden="true" ui-sref="group({id: user.id})"></i>
-  <h1>My Albums</h1>
-</div> -->
 
 <album-directive show='modalShown'></album-directive>
 
@@ -20,6 +15,11 @@
       <button type="button" ng-click="editToggleModal(album); getJournalByAlbum(album._id)">Edit</button>
       <button type="button" ng-click="deleteAlbum(album._id)">Delete</button>
     </div>
+  </div>
+
+  <div class="noAlbum" ng-show="albums.length === 0">
+    <img src="./img/album-example.png" alt="" />
+    <p>What is the special event you want to record today?</p>
   </div>
 
 </div>

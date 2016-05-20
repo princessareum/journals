@@ -25,9 +25,8 @@ angular.module('app').controller('albumController', function($scope, mainService
     album.author = $scope.user._id;
     mainService.createAlbum(album).then(function(response){
       $scope.newAlbum = response;
-      // console.log(response)
       $scope.getAlbum($scope.groupId);
-      // console.log($scope.groupId)
+      $scope.newAlbum = "";
     });
     $scope.toggleModal();
   };
@@ -66,6 +65,7 @@ angular.module('app').controller('albumController', function($scope, mainService
         $scope.updatedAlbum = response;
         $scope.getAlbum($scope.groupId);
         $scope.editToggleModal();
+        $scope.updatedAlbum = "";
       });
   };
 

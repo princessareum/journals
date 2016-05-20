@@ -96,7 +96,7 @@ module.exports = {
 
   Logout: function(req, res, next){
     req.logout();
-    console.log("hit", req.user)
+    console.log("logout", req.user)
     return res.status(200).send('logged out');
   }
 

@@ -6,7 +6,7 @@ angular.module('app').controller('journalDetailController', function($scope, mai
   };
 
 
-  console.log(user);
+  // console.log(user);
 
   $scope.user = user;
   $scope.journalId = $stateParams.journalId;
@@ -14,15 +14,15 @@ angular.module('app').controller('journalDetailController', function($scope, mai
   $scope.groupId = $stateParams.groupId;
   $scope.images = [];
 
-  console.log($scope.journalId, $scope.groupId, $scope.albumId);
+  // console.log($scope.journalId, $scope.groupId, $scope.albumId);
 
 
 
   $scope.getJournalById = function(){
-    console.log('getting journal');
+    // console.log('getting journal');
     mainService.getJournalById($scope.journalId).then(function(response){
-      $scope.journal = response;
-      console.log($scope.journal)
+      $scope.journal = response[0];
+      // console.log($scope.journal)
     })
   };
 

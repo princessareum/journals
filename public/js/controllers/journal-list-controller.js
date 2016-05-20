@@ -22,8 +22,6 @@ angular.module('app').controller('journalListController', function($scope, mainS
     mainService.getJournalByAlbum($scope.albumId).then(function(response){
       $scope.journals = response;
       $scope.journals.reverse();
-      console.log(journals);
-      //
     })
   };
   $scope.getJournalByAlbum();

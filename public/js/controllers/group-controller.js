@@ -16,7 +16,6 @@ angular.module('app').controller('groupController', function($scope, user, mainS
 
 
   $scope.getGroup = function(){
-    //
     mainService.getGroup($scope.user._id).then(function(response){
       $scope.groups = response;
     })
@@ -25,22 +24,28 @@ angular.module('app').controller('groupController', function($scope, user, mainS
 
 
   $scope.getUserByEmail = function(emails, type){
-    var newEmails = emails.split(', ');
+    if(type === 'create'){
+      var newEmails = emails.split(', ');
+    } else {
+      var newEmails = emails;
+    }
 
     mainService.getUserByEmail(newEmails).then(function(response){
       var ids = [];
+      // console.log(response);
 
       for (var i = 0; i < response.length; i++) {
         ids.push(response[i]._id);
       }
-      //
         if(type === 'create'){
           $scope.group.users = ids;
           $scope.createGroup();
         } else {
+          $scope.selectedGroup.users = ids;
           $scope.updateGroup($scope.selectedGroup);
-            $scope.selectedGroup.users = ids;
         }
+    }).catch(function(err){
+      console.log('ERROR');
     })
   };
 
@@ -61,15 +66,14 @@ angular.module('app').controller('groupController', function($scope, user, mainS
   $scope.selectGroup = function(groupId){
     mainService.getAndPopulateGroup(groupId).then(function(response){
 
-      var emails = '';
+      var emails = [];
       for (var i = 0; i < response.users.length; i++) {
-        emails = emails + response.users[i].userEmail;
-        if(i+1 !== response.users.length){
-          emails += ', ';
-        }
+        emails.push(response.users[i].userEmail);
       }
+
       response.users = emails;
       $scope.selectedGroup = response;
+      // console.log($scope.selectedGroup);
     })
     //
   };
@@ -83,6 +87,14 @@ angular.module('app').controller('groupController', function($scope, user, mainS
       })
   };
 
+  $scope.addMember = function(newMember){
+    $scope.selectedGroup.users.push(newMember);
+    $scope.newMember = "";
+  };
+
+  $scope.removeMember = function(i){
+    $scope.selectedGroup.users.splice(i, 1);
+  };
 
   $scope.deleteGroup = function(groupId){
       mainService.deleteGroup(groupId).then(function(response){

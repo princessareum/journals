@@ -38,9 +38,7 @@ module.exports = {
 
 
   GetJournalById: function(req, res, next){
-    Journal.findById(req.params.id)
-    .populate({path: 'author.relationToBaby'})
-    .exec(function(err, response){
+    Journal.findById(req.params.id, function(err, response){
       if(err){
         res.status(500).json(err);
       } else {

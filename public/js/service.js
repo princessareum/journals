@@ -104,7 +104,7 @@ angular.module('app').service('mainService', function($http){
   this.getJournalById = function(journalId){
     return $http({
       method: 'GET',
-      url: '/api/journal/'+journalId
+      url: '/api/journal?_id='+journalId
     }).then(function(response){
       return response.data;
     })

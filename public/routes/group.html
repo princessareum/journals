@@ -1,10 +1,11 @@
 <nav-directive></nav-directive>
 
 <div class="group-list">
+
   <div class="groups" ng-repeat="group in groups track by $index">
 
     <div class="groups-list" ui-sref="album({groupId: group._id})">
-        <div class="group-name">{{group.name}}</div>
+        <div class="group-name"><p>{{group.name}}</p></div>
     </div>
 
     <div class="groupEditContainer">
@@ -13,6 +14,11 @@
       <edit-group ng-show="editModalShown"></edit-group>
     </div>
 
+  </div>
+
+  <div class="noGroup" ng-show="groups.length === 0">
+    <img src="./img/group-example.png" alt="" />
+    <p>Create groups, <br>create new memories now!</p>
   </div>
 </div>
 

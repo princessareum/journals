@@ -5,7 +5,7 @@
     <img src="{{journal.photo}}">
     <div class="journal-date"><p>{{journal.date | date: MM/dd/yyyy}}</p></div><br>
     <div class="journal-title"><p>{{journal.title}}</p></div><br>
-    <div class="journal-relationship"><p>by {{journal.relationship}}</p></div><br>
+    <div class="journal-relationship"><p>by {{journal.author.name.firstName}} {{journal.author.name.lastName}}</p></div><br>
   </div>
   <div class="journal-contents"><p>{{journal.contents}}<p></div><br>
 </div>
@@ -19,7 +19,7 @@
 <!-- <div class="spacer"></div> -->
 
 <footer class="editJournalFooter">
-  <div ng-show="user._id === journal.author" class="journal-edit-buttons">
+  <div ng-show="user._id === journal.author._id" class="journal-edit-buttons">
     <button type="button" ng-click="selectJournal(journal); toggleJournalModal()">Edit</button>
       <edit-journal show="journalModalShown"></edit-journal>
     <button type="button" ng-click="deleteJournal(journal._id)" ui-sref="journal({groupId: groupId, albumId: albumId})">Delete</button>

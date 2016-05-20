@@ -104,16 +104,16 @@ angular.module('app', ['ui.router'])
         controller: 'journalDetailController',
         resolve: {
           user: function(mainService, $state){
-            console.log("Starting resolve");
+            // console.log("Starting resolve");
                   return mainService.currentUser().then(function(response){
-                    console.log("Inside response");
+                    // console.log("Inside response");
                     if(!response){
-                      console.log("no response");
+                      // console.log("no response");
                       $state.go('home');
                     }
                     return response;
                   }).catch(function(err){
-                    console.log("no response");
+                    // console.log("no response");
                     $state.go('home');
                   })
                 }

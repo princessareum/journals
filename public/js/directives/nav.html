@@ -1,4 +1,4 @@
-<header>
+<header class="afterLogin">
   <span class="header-item" ng-if="state === 'group'"><p>Groups</p></span>
   <span class="header-item" ng-if="state === 'album'"><i class="fa fa-arrow-circle-left" aria-hidden="true" ui-sref="group({id: user.id})"></i></span>
   <span class="header-item" ng-if="state === 'album'"><p>{{group.name}}</p></span>
@@ -11,6 +11,8 @@
   <button class="hamburger">&#9776;</button>
   <button class="cross">&#735;</button>
 </header>
+
+
 
 <div class="menu">
   <ul>

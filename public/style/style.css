@@ -56,7 +56,7 @@ header {
   font-weight:bold;
   cursor:pointer;
   outline:none;
-  z-index:10;
+  z-index:1;
 }
 .cross {
   background:none;
@@ -71,7 +71,7 @@ header {
   font-weight:bold;
   cursor:pointer;
   outline:none;
-  z-index:10;
+  z-index:1;
 }
 .menu {
   z-index:1;
@@ -169,6 +169,7 @@ header {
 }
 
 .home-description {
+  width: 80%;
   margin: 30px auto;
   padding: 20px;
   font-size: 3vw;
@@ -283,7 +284,7 @@ header {
 
 .loginModal button {
   width: 80%;
-  height: 30px;
+  height: 45px;
   background: #8DAAD9;
   color: white;
   margin-top: 30px;
@@ -313,7 +314,7 @@ header {
 .login-dialog {
   z-index: 2;
   position: fixed;
-  width: 250px;
+  width: 90%;
   height: 450px;
   top: 50%;
   left: 50%;
@@ -348,7 +349,7 @@ header {
 
 .groupModal button {
   width: 80%;
-  height: 30px;
+  height: 40px;
   background: #BBD994;
   color: white;
   margin-top: 30px;
@@ -379,7 +380,7 @@ header {
 .group-dialog {
   z-index: 2;
   position: fixed;
-  width: 250px;
+  width: 90%;
   height: 450px;
   top: 50%;
   left: 50%;
@@ -474,7 +475,7 @@ header {
 .album-dialog {
   z-index: 1;
   position: fixed;
-  width: 250px;
+  width: 90%;
   height: 450px;
   top: 50%;
   left: 50%;
@@ -497,7 +498,7 @@ header {
 
 .albumModal button {
   width: 80%;
-  height: 30px;
+  height: 40px;
   background: #A2DFE0;
   border: none;
   color: white;
@@ -535,7 +536,7 @@ header {
 
 .edit-group-dialog {
   position: fixed;
-  width: 250px;
+  width: 90%;
   height: 450px;
   top: 50%;
   left: 50%;
@@ -558,7 +559,7 @@ header {
 
 .editGroupModal button {
   width: 80%;
-  height: 30px;
+  height: 35px;
   background: #F2A0CA;
   color: white;
   margin-top: 10px;
@@ -580,7 +581,7 @@ header {
 }
 
 .email-list {
-  margin-left: 25px;
+  margin: auto;
   margin-bottom: 10px;
   width: 80%;
   height: 70px;
@@ -608,7 +609,7 @@ header {
 
 .edit-album-dialog {
   position: fixed;
-  width: 250px;
+  width: 90%;
   height: 450px;
   top: 50%;
   left: 50%;
@@ -634,7 +635,7 @@ header {
 
 .edit-album-modal button {
   width: 80%;
-  height: 30px;
+  height: 40px;
   background: #F2A0CA;
   color: white;
   margin-top: 30px;
@@ -651,6 +652,7 @@ header {
 
 .edit-album-modal select {
   background: #fff;
+  height: 30px;
 }
 
 
@@ -828,7 +830,7 @@ header {
 
 .journal-list img{
   margin-bottom: -4px;
-  height: 100px;
+  height: 125px;
   width: 100%;
 }
 
@@ -957,13 +959,6 @@ header {
 }
 
 
-
-
-
-
-
-
-
 .journal img {
   margin: 30px 0 10px;;
   width: 100%;
@@ -992,11 +987,13 @@ header {
 .journal-edit-buttons button {
   color: #fff;
   border: none;
-  width: 80px;
+  width: 100px;
+  height: 30px;
   padding: 5px 10px;
-  margin: 5px 20px;
+  margin: auto 20px;
+  margin-top: 3px;
   background: #8DAAD9;
-  /*margin-bottom: 50px;*/
+  font-size: 15px;
 }
 
 .editJournalFooter {
@@ -1076,7 +1073,7 @@ header {
   position: absolute;
   bottom: 45;
   width: 100%;
-  height: 45px;
+  height: 90px;
 }
 
 .noGroup, .noAlbum, .noJournal {
@@ -1186,7 +1183,7 @@ header {
   }
 
   .signup h1 {
-    font-size: 80px;
+    font-size: 60px;
     margin-bottom: 100px;
   }
 
@@ -1196,10 +1193,299 @@ header {
 
   .signup button {
     margin-top: 50px;
+    font-size: 20px;
+  }
+
+
+  /*navbar after login*/
+
+  .afterLogin {
+    display: inline-block;
+    height: 80px;
+  	line-height:80px;
+  }
+
+  .afterLogin .fa-arrow-circle-left  {
+      font-size: 40px;
+    }
+
+
+  .menu a {
+    height: 80px;
+  }
+
+  .header-item p, i{
+    margin-left: 50px;
+    font-size: 40px;
+  }
+
+  .hamburger {
+    line-height:45px;
+    padding:15px 15px 0px 15px;
+    font-size:3em;
+  }
+  .cross {
+    padding:15px 15px 0px 15px;
+    font-size:7em;
+  }
+  .menu {
+    z-index:1;
+    font-weight:bold;
+    font-size:0.8em;
+    width:100%;
+    background:#b5e0e0;
+    position:absolute;
+    text-align:center;
+  }
+
+  .menu li {
+    font-size: 25px;
+  }
+
+  .menu li:hover {
+    display: block;
+    background:#56d8d8;
+    padding:15px 0 15px 0;
+    border-bottom:#e8ffff 1px solid;
+  }
+
+/*group*/
+
+  .groups {
+    border: 3px solid white;
+  }
+
+  .group-list {
+    margin: auto;
+    width: 70%;
+  }
+
+  .group-name {
+    font-size: 35px;
+    height: 200px;
+  }
+
+  .groupEditContainer {
+    height: 50px;
+  }
+
+  .groupEdit {
+    margin: 10px 10px;
+    padding: 5px 20px;
+    font-size: 15px;
+  }
+
+  .createGroupFooter, .createAlbumFooter, .createJournalEntryFooter, .editJournalFooter {
+    height: 80px;
+  }
+
+  .create-group p, .create-album p, .create-journal p {
+    font-size: 35px;
+  }
+
+/*edit group modal*/
+
+  .edit-group-dialog {
+    width: 350px;
+    height: 650px;
+  }
+
+  .editGroupModal h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+
+  .editGroupModal input, .editGroupModal button {
+    height: 40px;
+  }
+  .email-list {
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+/*create group modal*/
+
+  .group-dialog {
+    width: 350px;
+    height: 650px;
+  }
+
+  .groupModal h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+
+  .groupModal input, .groupModal button {
+    height: 40px;
+  }
+
+/*album list*/
+  .album-container {
+    height: 200px;
+  }
+
+  .album-cover {
+    width: 150px;
+    height: 200px;
+  }
+
+  .album-name p {
+    font-size: 35px;
+  }
+
+  .album_buttons {
+    margin-bottom: -40px;
+  }
+
+  .album_buttons button {
+    margin: 5px 0;
+    padding: 5px 20px;
+    font-size: 20px;
+  }
+
+
+/*album edit modal*/
+  .edit-album-dialog {
+    width: 350px;
+    height: 650px;
+  }
+
+  .edit-album-modal h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+
+  .edit-album-modal input, .edit-album-modal button {
+    height: 40px;
+  }
+
+  .edit-album-modal select {
+    height: 25px;
+  }
+
+/*create album modal*/
+
+  .album-dialog {
+    width: 350px;
+    height: 650px;
+  }
+
+  .albumModal h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+
+  .albumModal input, .albumModal button {
+    height: 40px;
+  }
+
+
+/*journal list*/
+
+  .journal-list img{
+    height: 250px;
+  }
+
+/*journal entry*/
+
+  .journal-entry {
+    width: 70%;
+    margin: 70px auto;
+  }
+
+  .journal-entry p {
+    font-size: 25px;
+  }
+
+  .journal-entry input {
+    height: 40px;
+  }
+
+  .journal-entry textarea {
+    width: 80%;
+  }
+
+  .journal-entry button {
+    font-size: 20px;
+    padding: 5px 20px;
+    height: 50px;
+    width: 200px;
+  }
+
+
+/*journal detail*/
+
+  .journal {
+    margin-bottom: 100px;
+  }
+
+  .journal-photo {
+    margin: 80px auto;
+    width: 500px;
+    height: 600px;
+  }
+
+  .journal-photo:before {
+    left:-50px;
+    top: -20px;
+    width: 170px;
+    height: 40px;
+    background-color: rgba(222,220,198,0.7);
+    -webkit-transform: rotate(-25deg);
+    -moz-transform: rotate(-12deg);
+    -o-transform: rotate(-12deg);
+    -ms-transform: rotate(-12deg);
+  }
+
+  .journal-photo:nth-child(even):before {
+    left:150px;
+    top: -15px;
+    width: 55px;
+    height: 25px;
+    -webkit-transform: rotate(12deg);
+    -moz-transform: rotate(12deg);
+    -o-transform: rotate(12deg);
+    -ms-transform: rotate(12deg);
+  }
+
+
+
+
+
+  .journal-photo img {
+    max-width: 350px;
+    max-height: 400px;
+    margin-bottom: 20px;
+  }
+
+  .journal-photo p {
+    font-size: 20px;
+  }
+
+  .journal-contents p {
+    font-size: 25px;
+  }
+
+  .journal-edit-buttons {
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .journal-edit-buttons button {
+    color: #fff;
+    border: none;
+    width: 100px;
+    padding: 5px 20px;
+    margin: 12px 20px;
+    background: #8DAAD9;
+    font-size: 20px;
+    /*margin-bottom: 50px;*/
   }
 
 
 } /*end of media query*/
+
+
 
 
 @media (min-width: 850px) {
@@ -1228,6 +1514,20 @@ header {
   }
 
 
+/*signup*/
+
+  .signup h1 {
+  font-size: 80px;
+  }
+
+  .signup input, .signup button {
+    height: 60px;
+  }
+
+  .signup button {
+    margin-top: 50px;
+    font-size: 30px;
+  }
 
 
 

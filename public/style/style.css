@@ -29,6 +29,10 @@ header {
 	line-height:50px;
 }
 
+.navbar {
+  display: none;
+}
+
 .header-item p, i{
   display: inline-block;
   color: white;
@@ -165,13 +169,12 @@ header {
 }
 
 .home-description {
-  margin: 30px 30px;
+  margin: 30px auto;
   padding: 20px;
   font-size: 3vw;
   text-align: center;
   border: 8px dashed #A2DFE0;
   background: #ffedf5;
-  /*box-shadow: 8px 8px 20px #aaa;*/
 }
 
 .home-description h2 {
@@ -1090,3 +1093,144 @@ header {
 .noAlbum p, .noJournal p, .noGroup p {
   margin-top: 30px;
 }
+
+
+
+
+
+/*media query*/
+
+/*tablet*/
+
+@media (min-width: 600px) {
+
+  /*home description and photo*/
+  .home-contents {
+    text-align: center;
+  }
+
+  .home {
+    text-align: center;
+  }
+
+  .home-description {
+    text-align: center;
+    width: 80%;
+  }
+  .home-baby-photo {
+    width: 80%;
+  }
+
+  /*hamburger menu*/
+  header {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  /*navbar appear for the bigger screen*/
+  .navbar {
+    display: inline-block;
+    text-align: right;
+    background: #A2DFE0;
+    width: 100%;
+    height: 80px;
+    position: relative;
+  }
+
+  .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .nav li{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    list-style: none;
+    margin: 12px 30px 20px 10px;
+  }
+
+  .nav li a {
+    text-align: center;
+    padding: 14px 12px;
+  }
+
+
+/*login dialog*/
+  .login-dialog {
+    width: 350px;
+    height: 650px;
+  }
+
+  .loginModal h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+
+  .loginModal input, .loginModal button {
+    height: 40px;
+  }
+
+/*signup*/
+
+  .signup {
+    margin: auto;
+    width: 60%;
+  }
+
+  .signup h1 {
+    font-size: 80px;
+    margin-bottom: 100px;
+  }
+
+  .signup input, .signup button {
+    height: 40px;
+  }
+
+  .signup button {
+    margin-top: 50px;
+  }
+
+
+} /*end of media query*/
+
+
+@media (min-width: 850px) {
+
+  .home-contents {
+    text-align: center;
+  }
+
+  .home-baby-photo {
+    width: 60%;
+  }
+
+  .home-description {
+    text-align: center;
+    width: 60%;
+    padding: 20px;
+    font-size: 2vw;
+    border: 8px dashed #A2DFE0;
+    background: #ffedf5;
+  }
+
+  .home-description h2 {
+    margin-top: 20px;
+    color: #A2DFE0;
+    font-size: 10vw;
+  }
+
+
+
+
+
+
+
+}/*end of media query*/

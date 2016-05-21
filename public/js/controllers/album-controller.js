@@ -26,7 +26,7 @@ angular.module('app').controller('albumController', function($scope, mainService
     mainService.createAlbum(album).then(function(response){
       $scope.newAlbum = response;
       $scope.getAlbum($scope.groupId);
-      $scope.newAlbum = "";
+      $scope.album.title = "";
     });
     $scope.toggleModal();
   };

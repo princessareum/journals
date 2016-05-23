@@ -7,11 +7,11 @@
             <h1>Edit Journal</h1>
             <input type="date" placeholder=" Date" ng-modal="selectedJournal.date"><br>
             <input type="text" placeholder=" Title" ng-model="selectedJournal.title"><br>
-            <input type="file" fileread accept="image/*" ng-model='selectedJournal.photo' id="journal-entry-file"><br>
+            <input type="file" fileread accept="image/*" ng-model='selectedJournal.photo'><br>
             <textarea rows="8" cols="40" placeholder=" Journal Entry" ng-model=selectedJournal.contents></textarea><br>
 
             <div class="journal-buttons">
-              <button type="button" ng-click="updateJournal(journal)">
+              <button type="button" ng-click="updateJournal(journal); toggleJournalModal()">
                 <ui-sref="journal({groupId: groupId, albumId: albumId})">Edit</ui-sref>
               </button>
               <button type="button" ng-click="toggleJournalModal()">Cancel</button>

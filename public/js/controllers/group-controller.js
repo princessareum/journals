@@ -97,6 +97,10 @@ angular.module('app').controller('groupController', function($scope, user, mainS
   };
 
   $scope.deleteGroup = function(groupId){
+    var confirmation = confirm('Are you sure you want to delete this Group?');
+    if(!confirmation){
+      return
+    }
       mainService.deleteGroup(groupId).then(function(response){
         $scope.groupList = response;
         $scope.getGroup();

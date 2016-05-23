@@ -71,6 +71,10 @@ angular.module('app').controller('albumController', function($scope, mainService
 
 
   $scope.deleteAlbum = function(albumId){
+    var confirmation = confirm('Are you sure you want to delete this Album?');
+    if(!confirmation){
+      return
+    }
       mainService.deleteAlbum(albumId).then(function(response){
         $scope.albumList = response;
         $scope.getAlbum($scope.groupId);

@@ -21,6 +21,7 @@ angular.module('app').controller('journalDetailController', function($scope, mai
   $scope.getJournalById = function(){
     // console.log('getting journal');
     mainService.getJournalById($scope.journalId).then(function(response){
+      response[0].date = new Date(response[0].date);
       $scope.journal = response[0];
       // console.log($scope.journal)
     })
@@ -52,6 +53,10 @@ angular.module('app').controller('journalDetailController', function($scope, mai
 
 
   $scope.deleteJournal = function(journalId){
+    var confirmation = confirm('Are you sure you want to delete this journal?');
+    if(!confirmation){
+      return
+    }
       mainService.deleteJournal(journalId).then(function(response){
         $scope.journalList = response;
         $scope.getJournalByAlbum();

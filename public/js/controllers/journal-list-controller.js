@@ -28,6 +28,7 @@ angular.module('app').controller('journalListController', function($scope, mainS
 
 
   $scope.selectJournal = function(journal){
+    journal.date = new Date(journal.date);
     $scope.selectedJournal = journal;
   };
 

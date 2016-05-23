@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var journalSchema = new mongoose.Schema({
-  date: {type: String, required: true},
+  date: {type: Date, required: true},
   author: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
   // relationship: {type: String, required: true},
   title: {type: String, required: true},

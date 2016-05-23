@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic);
-@import url(https://fonts.googleapis.com/css?family=Exo+2:900);
+@import url(https://fonts.googleapis.com/css?family=Clicker+Script);
 
 * {
   margin: 0;
@@ -12,7 +12,7 @@ input, p, li, button {
 }
 
 h1, h2 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Clicker Script', cursive;
 }
 
 
@@ -221,7 +221,7 @@ header {
 .signup input {
   margin-bottom: 10px;
   width: 80%;
-  height: 35px;
+  height: 40px;
   border: 1px solid #f2f2f2;
   opacity: 0.9;
 }
@@ -368,9 +368,9 @@ header {
 
 
 .groupModal h1{
-  margin-top: 50px;
+  margin-top: 35px;
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 700;
 }
 
@@ -493,8 +493,7 @@ header {
 }
 
 .albumModal h1 {
-  margin-top: 10px;
-  font-size: 35px;
+  font-size: 50px;
 }
 
 .albumModal button {
@@ -509,7 +508,7 @@ header {
 
 .albumModal input {
   border: 1px solid #f2f2f2;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 5px;
   width: 80%;
   height: 30px;
@@ -554,8 +553,8 @@ header {
 }
 
 .editGroupModal h1 {
-  margin-top: 50px;
-  font-size: 35px;
+  margin-top: 25px;
+  font-size: 50px;
 }
 
 .editGroupModal button {
@@ -629,9 +628,9 @@ header {
 }
 
 .edit-album-modal h1 {
-  margin-top: 100px;
+  margin-top: 75px;
   margin-bottom: 30px;
-  font-size: 35px;
+  font-size: 50px;
 }
 
 .edit-album-modal button {
@@ -1033,15 +1032,14 @@ header {
   margin-bottom: 10px;
   background: white;
   width: 80%;
-  height: 25px;
+  height: 30px;
   border: 2px solid #f2f2f2;
 }
 
 .editJournalModal h1{
-  margin-top: 50px;
+  margin-top: 25px;
   margin-bottom: 20px;
-  font-size: 10vw;
-  font-weight: 700;
+  font-size: 50px;
 }
 
 .editJournalModal p{
@@ -1056,7 +1054,7 @@ header {
 .edit-journal-dialog{
   z-index: 2;
   position: fixed;
-  width: 250px;
+  width: 90%;
   height: 450px;
   top: 50%;
   left: 50%;
@@ -1289,8 +1287,9 @@ header {
   }
 
   .editGroupModal h1 {
-    font-size: 50px;
-    margin-bottom: 50px;
+    font-size: 80px;
+    margin-bottom: 30px;
+    margin-top: 65px;
   }
 
   .editGroupModal input, .editGroupModal button {
@@ -1309,8 +1308,9 @@ header {
   }
 
   .groupModal h1 {
-    font-size: 50px;
-    margin-bottom: 50px;
+    font-size: 80px;
+    margin-bottom: 35px;
+    margin-top: 100px;
   }
 
   .groupModal input, .groupModal button {
@@ -1359,7 +1359,8 @@ header {
   }
 
   .edit-album-modal h1 {
-    font-size: 50px;
+    font-size: 80px;
+    margin-top: 140px;
     margin-bottom: 50px;
   }
 
@@ -1379,8 +1380,9 @@ header {
   }
 
   .albumModal h1 {
-    font-size: 50px;
-    margin-bottom: 50px;
+    font-size: 80px;
+    margin-bottom: 35px;
+    margin-top: 50px;
   }
 
   .albumModal input, .albumModal button {
@@ -1511,7 +1513,8 @@ header {
   }
 
   .edit-journal h1 {
-    font-size: 50px;
+    margin-top: 60px;
+    font-size: 80px;
     margin-bottom: 50px;
   }
 

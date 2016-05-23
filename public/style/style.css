@@ -1162,7 +1162,8 @@ header {
 
 /*login dialog*/
   .login-dialog {
-    width: 350px;
+    padding-top: 95px;
+    width: 450px;
     height: 650px;
   }
 
@@ -1286,7 +1287,7 @@ header {
 /*edit group modal*/
 
   .edit-group-dialog {
-    width: 350px;
+    width: 450px;
     height: 650px;
   }
 
@@ -1306,7 +1307,7 @@ header {
 /*create group modal*/
 
   .group-dialog {
-    width: 350px;
+    width: 450px;
     height: 650px;
   }
 
@@ -1356,7 +1357,7 @@ header {
 
 /*album edit modal*/
   .edit-album-dialog {
-    width: 350px;
+    width: 450px;
     height: 650px;
   }
 
@@ -1376,7 +1377,7 @@ header {
 /*create album modal*/
 
   .album-dialog {
-    width: 350px;
+    width: 450px;
     height: 650px;
   }
 
@@ -1399,7 +1400,9 @@ header {
 /*journal entry*/
 
   .journal-entry {
+    padding-top: 100px;
     width: 70%;
+    height: 700px;
     margin: 70px auto;
   }
 
@@ -1413,6 +1416,7 @@ header {
 
   .journal-entry textarea {
     width: 80%;
+    height: 150px;
   }
 
   .journal-entry button {
@@ -1505,7 +1509,7 @@ header {
 
 /*login dialog*/
   .edit-journal-dialog {
-    width: 350px;
+    width: 450px;
     height: 650px;
   }
 

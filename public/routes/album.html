@@ -6,7 +6,8 @@
   <div class="albums" ng-repeat="album in albums track by $index" ng-click="selectAlbum(album)">
 
     <div class="album-container" ng-class="{alternate: $index%2 === 0}" ui-sref="journal({groupId: groupId, albumId: album._id})">
-      <img class="album-cover" src="{{album.albumCover}}">
+      <img class="album-cover" src="./img/no-img.png" ng-if="!album.albumCover">
+      <img class="album-cover" src="{{album.albumCover}}" ng-if="album.albumCover">
       <div class="album-name"><p>{{album.title}}</p></div>
       <div class="albumEdit" ng-if="user._id === album.author">
       </div>

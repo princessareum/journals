@@ -1523,6 +1523,10 @@ header {
   }
 
 
+  .noAlbum img, .noJournal img, .noGroup img {
+    width: 30%;
+    box-shadow: 2px 2px 15px #898989;
+  }
 
 } /*end of media query*/
 
